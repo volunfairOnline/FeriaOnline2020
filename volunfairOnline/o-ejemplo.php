@@ -1,6 +1,6 @@
 <?php
 
-// --- Archivo con las funciones de configuración (cabeceras, pie, ...)
+// --- Archivo con las funciones de configuración (º, pie, ...)
 include ('./scripts/config.php');
 
 // --- Escribimos las cabeceras
@@ -33,7 +33,7 @@ escribe_cabecera();
 							<div class="c-content-media-1 c-bordered wow animated fadeInUp">
 								<div class="col-md-12">
 									<div class="c-content-title-1">
-										<h3 class="c-font-34 c-font-center c-font-bold c-font-uppercase c-margin-b-30">¡COLABORA CON NOSOTROS!</h3>
+										<h2 class="c-font-34 c-font-center c-font-bold c-font-uppercase c-margin-b-30">¡COLABORA CON NOSOTROS!</h2>
 										<div class="c-line-center c-theme-bg"></div>
 									</div>
 								</div>
@@ -43,7 +43,7 @@ escribe_cabecera();
 										</p>
 
 										<p>
-											Para donaciones y todo tipo de aportación económica puedes ingresar la cantidad que desees en nuestra cuenta
+											<em>Para donaciones y todo tipo de aportación</em> económica puedes ingresar la cantidad que desees en nuestra cuenta
 											bancaria:<br />
 											<strong>ES85 3025 0003 9414 3335 5605</strong>
 										</p>		
