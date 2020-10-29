@@ -64,6 +64,11 @@
 			dbPrmKey : 'id_voluntariado',
 			label : 'Lugares que ofrecen: <br />'
 		}),
+		new field ({
+			type : 'text',
+			id : 'rs_ong',
+			label : 'Instagram: <br />'
+		}),
 		// --- Array with the options
 		options = {
 			method : 'POST',
