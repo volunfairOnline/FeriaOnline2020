@@ -13,11 +13,11 @@
 	var form1 = new form (
 		// --- General settings of the form
 		config = {
-			id : 68,
+			//id : 68,
 			idField : 'id_ong',
 			dbTable : 'ongs',
 			timeField : 'fecha_inscripcion',
-			mode : 'EDIT',
+			mode : 'create',
 			okMess : 'Tú inscripción a VOLUNFAIR ha sido registrada con éxito! ¡Te contactaremos pronto!',
 			errMess : 'No "dbTable" or "timeField" specified! '
 				+ '<a href="mailto:&#105;&#110;&#102;&#111;&#64;&#118;&#111;&#108;&#117;&#110;&#102;&#97;&#105;&#114;&#46;&#111;&#114;&#103;?Subject=Form%20Config%20Error">'

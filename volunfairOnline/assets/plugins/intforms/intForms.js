@@ -10,6 +10,11 @@
  *******************************************************************************************/
  
  /* ---------------------------------------------------------------------------
+ Global variables
+------------------------------------------------------------------------------ */
+pathPHP = "../volunfairOnline/assets/plugins/intforms/";			// --- Location of PHP files
+
+ /* ---------------------------------------------------------------------------
  Class form
  Manage all related to the HTML <form> tag (submission, fields...)
 ------------------------------------------------------------------------------ */
@@ -140,7 +145,7 @@ class form {
 			configErrorDiv.innerHTML = messages.error;
 		// ---	Sending the info to the db	
 		} else {
-			$.post("./readForm.php", {formOptions: formConfig, formData: formResults}, function(formSendStatus) {
+			$.post(pathPHP + pathPHP + "readForm.php", {formOptions: formConfig, formData: formResults}, function(formSendStatus) {
 				$("#vuelta").html(formSendStatus);
 				//document.getElementById('vuelta').innerHTML = messages.ok;
 			});
@@ -248,7 +253,7 @@ class field {
 				
 				// --- Query to the database: specify table with the correspondance betweeb key and values, the name of the keys row, the name of
 				// --- the values row and the name of the images row.
-				$.post("./getOptions.php", {optData: [this.dbAuxTable, this.dbPrmKey, this.id, this.dbImg]}, function(queryReturn) {
+				$.post(pathPHP + "getOptions.php", {optData: [this.dbAuxTable, this.dbPrmKey, this.id, this.dbImg]}, function(queryReturn) {
 					
 					optResults = JSON.parse(queryReturn);
 					

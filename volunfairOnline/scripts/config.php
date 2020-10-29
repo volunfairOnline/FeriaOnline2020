@@ -73,6 +73,7 @@ function escribe_cabecera ($es_index = 0) {
 			echo '<link href="assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />'."\n";
 			echo '<link href="assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />'."\n";
 			echo '<link href="assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />'."\n";
+			echo '<link href="assets/plugins/wymeditor/skins/default/skin.css" rel="stylesheet" type="text/css" />'."\n";
 			echo '<!-- END: BASE PLUGINS -->'."\n";
 			echo '<!-- BEGIN THEME STYLES -->'."\n";
 			echo '<link href="assets/base/css/plugins.css" rel="stylesheet" type="text/css" />'."\n";
