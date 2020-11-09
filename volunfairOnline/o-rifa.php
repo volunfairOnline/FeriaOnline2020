@@ -53,13 +53,27 @@ escribe_cabecera();
 									<?php
                                         // --- Abrir la base de datos con usuario visitante
                                         $sql = Abrir_base();
-                                        //`id_rifa`, `nombre_rifa`,`descripción_rifa`, `imagen_rifa` cambiado por *
-                                        $result = $sql->Select(" SELECT * FROM `rifa`");
+                                        // cambiado por *
+                                        $result = $sql->Select(" SELECT `id_rifa`, `nombre_rifa`,`descripcion_rifa`, `imagen_rifa` FROM `rifa`");
                                         
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
                                             throw new Exception(mysql_error($sql));
-                                        } else {
+                                        } 
+                                        else {
+                                            while($row = mysqli_fetch_array($result)) {
+                                                echo '<div class="row">'."\n";
+                                                echo '	<div class="col-md-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+                                                echo '		<img src = "./assets/base/img/volunfair/rifa/'.$row['imagen_rifa'].'" />'."\n";
+                                                echo '		<p> <b>'.$row['nombre_rifa'].'</b>';
+                                                echo '		<br>'."\n";
+                                                echo '		<b>Descripci&oacute;n</b>: '.htmlspecialchars(stripslashes($row['descripcion_rifa']))."\n";
+                                                echo '		</p>'."\n";
+                                                echo '	</div>'."\n";
+                                                echo '</div>'."\n";
+                                                echo '<br />'."\n";
+                                            }
+                                            /*
                                             echo('<table style="width: 100%;">
                                             <tbody>');
                                            while($row = mysqli_fetch_array($result)) {
@@ -71,7 +85,7 @@ escribe_cabecera();
                                                 </tr>');
                                             }
                                             echo('</tbody>
-                                            </table>');
+                                            </table>');*/
                                         }
                                     ?>									
                                     
