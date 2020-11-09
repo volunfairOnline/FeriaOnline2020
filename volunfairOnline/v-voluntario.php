@@ -51,7 +51,7 @@ escribe_cabecera();
                             <div class="col-md-6 c-font-center c-font-bold c-font-uppercase c-margin-b-30">
                                 
                                 <div class="checkbox">
-                                    <p>¿A qué lugar te gustaría irte?</p>
+                                    <p>¿A qué lugar te gustaría ir?</p>
 									
 									<?php
                                         // --- Abrir la base de datos con usuario visitante
