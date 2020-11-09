@@ -37,7 +37,7 @@ escribe_cabecera();
                             <div class="c-content-title-1">
                                 <h3 class="c-font-34 c-font-center c-font-bold c-font-uppercase c-margin-b-30"> RIFA</h3>
                                 <div class="c-line-center c-theme-bg"></div>
-                                <p class="c-font-center c-font-bold c-font-uppercase c-margin-b-30">¡Seguro que estas deseando de poder disfrutar de algunos de estos premios!</p>
+                                <p class="c-font-center c-font-bold c-font-uppercase c-margin-b-30">¡Seguro que estás deseando de poder disfrutar de algunos de estos premios!</p>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ escribe_cabecera();
                                         // --- Abrir la base de datos con usuario visitante
                                         $sql = Abrir_base();
                                         // cambiado por *
-                                        $result = $sql->Select(" SELECT `id_rifa`, `nombre_rifa`,`descripcion_rifa`, `imagen_rifa` FROM `rifa`");
+                                        $result = $sql->Select(" SELECT `id_rifa`, `articulo_rifa`,`descripcion_rifa`, `foto_rifa` FROM `rifa`");
                                         
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
@@ -64,8 +64,8 @@ escribe_cabecera();
                                             while($row = mysqli_fetch_array($result)) {
                                                 echo '<div class="row">'."\n";
                                                 echo '	<div class="col-md-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
-                                                echo '		<img src = "./assets/base/img/volunfair/rifa/'.$row['imagen_rifa'].'" />'."\n";
-                                                echo '		<p> <b>'.$row['nombre_rifa'].'</b>';
+                                                echo '		<img src = "./assets/base/img/volunfair/rifa/'.$row['foto_rifa'].'" />'."\n";
+                                                echo '		<p> <b>'.$row['articulo_rifa'].'</b>';
                                                 echo '		<br>'."\n";
                                                 echo '		<b>Descripci&oacute;n</b>: '.htmlspecialchars(stripslashes($row['descripcion_rifa']))."\n";
                                                 echo '		</p>'."\n";
