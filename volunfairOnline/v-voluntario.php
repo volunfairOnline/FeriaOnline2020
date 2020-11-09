@@ -60,7 +60,7 @@ escribe_cabecera();
                                         
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
-                                            throw new Exception(mysql_error($sql));
+                                            throw new Exception($sql->error);
                                         } else {
                                             while($row = mysqli_fetch_array($result)) {
                                                 echo ('<label><input type="checkbox" value="'.htmlspecialchars(stripslashes($row['id_lugar'])).'" name="lugar" id="lugar" />'.htmlspecialchars(stripslashes($row['pais_lugar'])).'</label><br />');

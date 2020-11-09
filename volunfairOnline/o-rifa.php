@@ -58,17 +58,18 @@ escribe_cabecera();
                                         
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
-                                            throw new Exception(mysql_error($sql));
+                                            throw new Exception($sql->error);
                                         } else {
                                             echo('<table style="width: 100%;">
                                             <tbody>');
                                            while($row = mysqli_fetch_array($result)) {
-                                               echo ('
+                                               echo '
                                                <tr>
-                                                    <td style="width: 33.3333%;"><img src=".assets/base/img/volunfair/rifa/'.htmlspecialchars(stripslashes($row['imagen_rifa'])'"></td>
-                                                    <td style="width: 33.3333%;">'.htmlspecialchars(stripslashes($row['nombre_rifa'])'</td>
-                                                    <td style="width: 33.3333%;">'.htmlspecialchars(stripslashes($row['descripción_rifa'])'</td>
-                                                </tr>');
+                                                    <td style="width: 33.3333%;"><img src="./assets/base/img/volunfair/rifa/'.htmlspecialchars(stripslashes($row['imagen_rifa'])).'"></td>
+                                                    <td style="width: 33.3333%;">'.htmlspecialchars(stripslashes($row['nombre_rifa'])).'</td>
+                                                    <td style="width: 33.3333%;">'.htmlspecialchars(stripslashes($row['descripción_rifa'])).'</td>
+                                                </tr>
+												';
                                             }
                                             echo('</tbody>
                                             </table>');
