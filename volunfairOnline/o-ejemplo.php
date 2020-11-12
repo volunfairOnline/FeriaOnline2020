@@ -40,7 +40,7 @@ escribe_cabecera();
 								</div>
 								
 										<p>
-											Ayúdanos a hacer realidad un año más este sueño que es VOLUNFAIR con tu granito de arena al proyecto:
+											Ayúdanos a hacer realidad un año más este sueño que es VOLUNFAIR 2021 con tu granito de arena al proyecto:
 										</p>
 
 										<p>
