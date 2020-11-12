@@ -51,7 +51,7 @@ escribe_cabecera();
                             <div class="col-md-6 c-font-center c-font-bold c-font-uppercase c-margin-b-30">
                                 
                                 <div class="checkbox">
-                                    <p>A que lugar te gustaria irte?</p>
+                                    <p>¿A qué lugar te gustaría ir?</p>
 									
 									<?php
                                         // --- Abrir la base de datos con usuario visitante
@@ -60,7 +60,7 @@ escribe_cabecera();
                                         
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
-                                            throw new Exception(mysql_error($sql));
+                                            throw new Exception($sql->error);
                                         } else {
                                             while($row = mysqli_fetch_array($result)) {
                                                 echo ('<label><input type="checkbox" value="'.htmlspecialchars(stripslashes($row['id_lugar'])).'" name="lugar" id="lugar" />'.htmlspecialchars(stripslashes($row['pais_lugar'])).'</label><br />');
@@ -77,7 +77,7 @@ escribe_cabecera();
                             <div class="col-md-6 c-font-center c-font-bold c-font-uppercase c-margin-b-30">
                                 
                                 <div class="checkbox">
-                                    <p>Que tipo de proyecto te gustaria hacer?</p>
+                                    <p>¿Qué tipo de proyecto te gustaría hacer?</p>
                                     <?php
                                         // --- Mostrar por pantalla el listado de posibles tipos de voluntariado
                                         $result = $sql->Select ("SELECT `id_proyecto`, `tipo_proyecto` FROM `proyecto`");
