@@ -55,7 +55,8 @@ escribe_cabecera();
                                         $sql = Abrir_base();
                                         // cambiado por *
                                         $result = $sql->Select(" SELECT `id_rifa`, `articulo_rifa`,`descripcion_rifa`, `foto_rifa` FROM `rifa`");
-                                        
+
+
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
                                             throw new Exception($sql->error);
