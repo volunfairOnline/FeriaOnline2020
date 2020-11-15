@@ -2,7 +2,7 @@
 
 
 // --- Archivo con las funciones de configuración (º, pie, ...)
-include ('./scripts/config.php');
+include ('./scripts/o-config.php');
 
 // --- Escribimos las cabeceras
 escribe_cabecera();
