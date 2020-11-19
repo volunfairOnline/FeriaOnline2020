@@ -14,7 +14,7 @@
 		// --- General settings of the form
 		config = {
 			//id : 68,
-			idField : 'id_ong',
+			idField : 'id_rifa',
 			dbTable : 'rifa',
 			timeField : 'fecha_inscripcion',
 			mode : 'create',
@@ -35,19 +35,50 @@
 		new field ({
 			type : 'input',
 			id : 'articulo_rifa',
-			dbTable : 'ongs',
+			dbTable: 'rifa',
 			label : 'Artículo a incluir: <br />'
 		}),
 		new field ({
-			type : 'textarea',
+			type : 'text',
 			id : 'empresa_rifa',
 			label : 'Empresa que lo cede: <br />'
 		}),
 		new field ({
-			type : 'wym-editor',
+			type : 'textarea',
 			id : 'descripcion_rifa',
 			label : 'Descripción del artículo: <br />'
 		}),
+		new field ({
+			type : 'text',
+			id : 'foto_rifa',
+			label : 'URL a la foto del artículo: <br />'
+		}),
+		new field ({
+			type : 'text',
+			id : 'instagram_rifa',
+			label : 'URL a perfil de instagram: <br />'
+		}),
+		new field ({
+			type : 'text',
+			id : 'twitter_rifa',
+			label : 'URL a perfil de twitter: <br />'
+		}),
+		new field ({
+			type : 'text',
+			id : 'rrss_rifa',
+			label : 'URL a otra RRSS: <br />'
+		}),
+		new field ({
+			type : 'text',
+			id : 'telefono_rifa',
+			label : 'Teléfono de contacto: <br />'
+		}),
+		new field ({
+			type : 'text',
+			id : 'email_rifa',
+			label : 'Email de contacto: <br />'
+		}),
+
 		// --- Array with the options
 		options = {
 			method : 'POST',
