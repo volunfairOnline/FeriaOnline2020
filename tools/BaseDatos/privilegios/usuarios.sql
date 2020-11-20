@@ -38,7 +38,7 @@ GRANT SELECT ON LaLiamos.* TO 'PequeLiante' IDENTIFIED BY 'H@y59ONGs';
 #---Importante, NO OLVIDAR
 Flush privileges;
 
-GRANT SELECT, INSERT, UPDATE, DELETE ON LaLiamos.ongs, TO PequeLiante;
+GRANT SELECT, INSERT, UPDATE, DELETE ON LaLiamos.ongs TO PequeLiante;
 GRANT SELECT, INSERT, UPDATE, DELETE ON LaLiamos.voluntariado_proyecto TO PequeLiante;
 GRANT SELECT, INSERT, UPDATE, DELETE ON LaLiamos.voluntariado_lugar TO PequeLiante;
 
