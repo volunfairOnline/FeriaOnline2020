@@ -48,7 +48,7 @@ escribe_cabecera();
                     <div class="row">
                         <form class="formulario" method="post">
                             <!-- BEGIN:MOSTRAR TABLA RIFA -->
-                            <div class="col-md-6 c-font-center c-font-bold c-font-uppercase c-margin-b-30">
+                            <div class="col-md-12 c-font-center c-font-bold c-margin-b-30">
                                 
 									<?php
                                         // --- Abrir la base de datos con usuario visitante
@@ -59,21 +59,20 @@ escribe_cabecera();
 
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
-                                            throw new Exception($sql->error);
+                                           // throw new Exception(mysqli_error($sql));
                                         } 
                                         else {
+											echo '<div class="row">'."\n";
                                             while($row = mysqli_fetch_array($result)) {
-                                                echo '<div class="row">'."\n";
-                                                echo '	<div class="col-md-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
-                                                echo '		<img src = "./assets/base/img/volunfair/rifa/'.$row['foto_rifa'].'" />'."\n";
+                                                echo '	<div class="col-md-4 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+                                                echo '		<img width=100% src = "./assets/base/img/volunfair/rifa/'.$row['foto_rifa'].'" />'."\n";
                                                 echo '		<p> <b>'.$row['articulo_rifa'].'</b>';
                                                 echo '		<br>'."\n";
                                                 echo '		<b>Descripci&oacute;n</b>: '.htmlspecialchars(stripslashes($row['descripcion_rifa']))."\n";
                                                 echo '		</p>'."\n";
                                                 echo '	</div>'."\n";
-                                                echo '</div>'."\n";
-                                                echo '<br />'."\n";
                                             }
+											echo '</div>'."\n";
                                         }
                                     ?>									
                                     
