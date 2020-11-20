@@ -1,7 +1,7 @@
 <?php 
 
 // --- Archivo con las funciones de configuración (cabeceras, pie, ...)
-include ('./scripts/config.php');
+include ('./scripts/o-config.php');
 
 session_start();
 // --- Iniciar la clase de conexión a la base de datos
@@ -55,10 +55,11 @@ escribe_cabecera();
                                         $sql = Abrir_base();
                                         // cambiado por *
                                         $result = $sql->Select(" SELECT `id_rifa`, `articulo_rifa`,`descripcion_rifa`, `foto_rifa` FROM `rifa`");
-                                        
+
+
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
-                                            throw new Exception(mysql_error($sql));
+                                            throw new Exception($sql->error);
                                         } 
                                         else {
                                             while($row = mysqli_fetch_array($result)) {
@@ -73,19 +74,6 @@ escribe_cabecera();
                                                 echo '</div>'."\n";
                                                 echo '<br />'."\n";
                                             }
-                                            /*
-                                            echo('<table style="width: 100%;">
-                                            <tbody>');
-                                           while($row = mysqli_fetch_array($result)) {
-                                               echo ('
-                                               <tr>
-                                                    <td style="width: 33.3333%;"><img src=".assets/base/img/volunfair/rifa/'.htmlspecialchars(stripslashes($row['imagen_rifa'])'"></td>
-                                                    <td style="width: 33.3333%;">'.htmlspecialchars(stripslashes($row['nombre_rifa'])'</td>
-                                                    <td style="width: 33.3333%;">'.htmlspecialchars(stripslashes($row['descripción_rifa'])'</td>
-                                                </tr>');
-                                            }
-                                            echo('</tbody>
-                                            </table>');*/
                                         }
                                     ?>									
                                     

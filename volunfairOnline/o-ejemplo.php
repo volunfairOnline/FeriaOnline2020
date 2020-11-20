@@ -2,7 +2,7 @@
 
 
 // --- Archivo con las funciones de configuración (º, pie, ...)
-include ('./scripts/config.php');
+include ('./scripts/o-config.php');
 
 // --- Escribimos las cabeceras
 escribe_cabecera();
@@ -40,7 +40,7 @@ escribe_cabecera();
 								</div>
 								
 										<p>
-											Ayúdanos a hacer realidad un año más este sueño que es VOLUNFAIR con tu granito de arena al proyecto:
+											Ayúdanos a hacer realidad un año más este sueño que es VOLUNFAIR  con tu granito de arena al proyecto:
 										</p>
 
 										<p>
