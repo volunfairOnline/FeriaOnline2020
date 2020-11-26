@@ -40,7 +40,7 @@ escribe_cabecera();
 								//id : 68,
 								idField : 'id_rifa',
 								dbTable : 'rifa',
-								timeField : 'fecha_inscripcion',
+								timeField : 'fecha_rifa',
 								mode : 'create',
 								okMess : 'Se ha incluido el nuevo artículo de la rifa',
 								errMess : 'No "dbTable" or "timeField" specified! '
@@ -50,7 +50,7 @@ escribe_cabecera();
 							// --- Form Button
 							new button ({
 								id : 'boton1',
-								defaultTxt : '¡Enviar tu inscripción!'
+								defaultTxt : 'Añadir artículo'
 							}),
 							// --- Form fields
 							new field ({
