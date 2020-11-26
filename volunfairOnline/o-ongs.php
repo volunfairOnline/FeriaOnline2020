@@ -1,8 +1,12 @@
-<?php
+<?php 
 
+// --- Archivo con las funciones de configuración (cabeceras, pie, ...)
+include ('./scripts/config.php');
 
-// --- Archivo con las funciones de configuración (º, pie, ...)
-include ('./scripts/o-config.php');
+session_start();
+// --- Iniciar la clase de conexión a la base de datos
+require_once('./mysql/MySQLHandler.class.php');     
+require_once("./mysql/misconexiones.php"); 
 
 // --- Escribimos las cabeceras
 escribe_cabecera();
@@ -11,8 +15,8 @@ escribe_cabecera();
         <!-- BEGIN: PAGE CONTAINER -->
         <div class="c-layout-page">
 		
-             <!-- BEGIN: LAYOUT/BREADCRUMBS/BREADCRUMBS-3 -->
-			<div class="c-layout-breadcrumbs-1 c-bgimage c-subtitle c-fonts-uppercase c-fonts-bold c-bg-img-center" style="background-image: url(assets/base/img/volunfair/mares/mar_006.jpg)">
+            <!-- BEGIN: LAYOUT/BREADCRUMBS/BREADCRUMBS-3 -->
+			<div class="c-layout-breadcrumbs-1 c-bgimage c-subtitle c-fonts-uppercase c-fonts-bold c-bg-img-center" style="background-image: url(assets/base/img/volunfair/mares/mar_003.jpg)">
                  <!--<div class="container">
 				 
                     <div class="c-page-title c-pull-left">
@@ -22,121 +26,147 @@ escribe_cabecera();
                 </div>-->
             </div>
             <!-- END: LAYOUT/BREADCRUMBS/BREADCRUMBS-3 -->
-
-			<!-- BEGIN: PAGE CONTENT -->
-			<div class="c-content-box c-size-md c-bg-white">
 			
-				<div class="container">
-				
-					<div class="row">
-						<div class="col-md-6">
-							<!-- BEGIN: CONTRIBUCIONES -->
-							<div class="c-content-media-1 c-bordered wow animated fadeInUp">
-								<div class="col-md-12">
-									<div class="c-content-title-1">
-										<h2 class="c-font-34 c-font-center c-font-bold c-font-uppercase c-margin-b-30">¡COLABORA CON NOSOTROS!</h2>
-										<div class="c-line-center c-theme-bg"></div>
-									</div>
-								</div>
-								
-										<p>
-											Ayúdanos a hacer realidad un año más este sueño que es VOLUNFAIR  con tu granito de arena al proyecto:
-										</p>
-
-										<p>
-											<em>Para donaciones y todo tipo de aportación</em> económica puedes ingresar la cantidad que desees en nuestra cuenta
-											bancaria:<br />
-											<strong>ES85 3025 0003 9414 3335 5605</strong>
-										</p>		
-
-										<p>
-											Con el espíritu de VOLUNFAIR pretendemos mover a toda la gente que tenga ilusión en ayudar
-											al de al lado, acercando el voluntariado a jóvenes y universitarios. Si te ves llamado por esta idea, 
-											¡la mejor ayuda que nos puedes dar es pasarte por la feria y preguntar a cualquiera de nuestro equipo!
-										</p>	
-												
+            <!-- BEGIN: PAGE CONTENT -->
+          
+             <!-- BEGIN: CONTENT/TABS/TAB-1 -->
+            <div class="c-content-box c-size-md c-no-bottom-padding c-overflow-hide">
+                <div class="c-container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="c-content-title-1">
+                                <h3 class="c-font-34 c-font-center c-font-bold c-font-uppercase c-margin-b-30"> PARTICIPANTES</h3>
+                                <div class="c-line-center c-theme-bg"></div>
+                                <p class="c-font-center c-font-bold c-font-uppercase c-margin-b-30">¡Selecciona tus intereses y encuentra tus ONGs más afines!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 
+                <div class="c-container">
+                  
+                    <div class="row">
+                        <div class="col-md-4">
+                          <!-- BEGIN: FORMULARIO -->
+                          <form class="formulario" method="post">
+                            <!-- BEGIN: LUGARES DE VOLUNTARIADO -->
+                            <div class="col-md-6 c-font-center c-font-bold c-font-uppercase c-margin-b-30">
+                                
+                                <div class="checkbox">
+                                    <p>¿A qué lugar te gustaría ir?</p>
 									
-							</div>
-                            <div class="col-md-6">
-							<div class="c-content-media-1 c-bordered wow animated fadeInDown">
-								<div class="col-md-12">
-									<div class="c-content-title-1">
-										<h3 class="c-font-34 c-font-center c-font-bold c-font-uppercase c-margin-b-30" id="rrss">VOLUNFAIR en Redes</h3>
-										<div class="c-line-center c-theme-bg"></div>
-									</div>
-								</div>
-								
-										<p>
-											¡Toda ayuda es bien recibida! Nos haces un gran favor siguiendo a VOLUNFAIR en 
-											nuestras redes sociales y dándolo a conocer a amigos o familia:
-											<br /><br />
+									<?php
+                                        // --- Abrir la base de datos con usuario visitante
+                                        $sql = Abrir_base();
+                                        $result = $sql->Select(" SELECT `id_lugar`, `pais_lugar` FROM `lugar`");
+                                        
+                                        // --- Mostrar por pantalla el listado de posibles destinos
+                                        if($result === false){
+                                            throw new Exception($sql->error);
+                                        } else {
+                                            while($row = mysqli_fetch_array($result)) {
+                                                echo ('<label><input type="checkbox" value="'.htmlspecialchars(stripslashes($row['id_lugar'])).'" name="lugar" id="lugar" />'.htmlspecialchars(stripslashes($row['pais_lugar'])).'</label><br />');
+                                            }
+                                        }
+                                    ?>									
+                                    
+                                </div>
+                                
+                            </div>
+                            <!-- END: LUGARES DE VOLUNTARIADO -->
 
-											<div class="panel-group text-center">
-
-												<div class="panel col-sm-6">
-													<a href="https://www.facebook.com/volunfair" target="blank"><i class="icon-social-facebook c-icongrande"></i></a>
-														<div class="card-body">
-															<a href="https://www.facebook.com/volunfair" target="blank"><h4 class="card-title">Facebook</h5></a>
-															Únete en Facebook
-														</div>
-												</div>
-
-												<div class="panel col-sm-6">
-													<a href="https://twitter.com/volunfair" target="blank"><i class="icon-social-twitter c-icongrande"></i></a>
-														<div class="card-body">
-															<a href="https://twitter.com/volunfair" target="blank"><h4 class="card-title">Twitter</h5></a>
-															Síguenos en Twitter 
-														</div>
-												</div>
-
-												<div class="panel col-sm-6">
-													<a href="https://www.instagram.com/volunfair/" target="blank"><i class="fab fa-instagram c-icongrande"></i></a>
-														<div class="card-body">
-															<a href="https://www.instagram.com/volunfair/" target="blank"><h4 class="card-title">Instagram</h5></a>
-															Síguenos en Instagram
-														</div>
-												</div>
-
-												<div class="panel col-sm-6">
-													<a href="https://es.linkedin.com/company/volunfair" target="blank"><i class="fab fa-linkedin c-icongrande"></i></a>
-														<div class="card-body">
-															<a href="https://es.linkedin.com/company/volunfair" target="blank"><h4 class="card-title">LinkedIn</h5></a>
-															Contáctanos en LinkedIn
-														</div>
-												</div>
-
-											</div>			
-										</p>
-
-												
+                            <!-- BEGIN: TIPOS DE VOLUNTARIADO -->
+                            <div class="col-md-6 c-font-center c-font-bold c-font-uppercase c-margin-b-30">
+                                
+                                <div class="checkbox">
+                                    <p>¿Qué tipo de proyecto te gustaría hacer?</p>
+                                    <?php
+                                        // --- Mostrar por pantalla el listado de posibles tipos de voluntariado
+                                        $result = $sql->Select ("SELECT `id_proyecto`, `tipo_proyecto` FROM `proyecto`");
+                                        while($row = mysqli_fetch_array($result)) {
+                                            echo '<label><input type="checkbox" value="'.htmlspecialchars(stripslashes($row['id_proyecto'])).'" name="tipo" id="tipo" />'.htmlspecialchars(stripslashes($row['tipo_proyecto'])).'</label><br />';
+                                        }   
+                                    ?>					
 									
-							</div>							
-						</div>
-						</div>
-						<div class="col-md-6 wow animated fadeInLeft">
-							<img src="./assets/base/img/volunfair/ayuda/charity.svg" width="75%" alt="¡Colabora con VOLUNFAIR!" class="img-centrada" />
-                            <img src="./assets/base/img/volunfair/ayuda/social-care.svg" width="70%" alt="¡Colabora con VOLUNFAIR!" class="img-centrada" />
-						</div>
-								
-								<!-- NOTA DE NACHO:Yo pondría aquí una foto de nuestro equipo -->
-					</div>
+                                </div>
+                                
+                            </div>
+                            <!-- END: TIPOS DE VOLUNTARIADO -->
+                            
+                            <!-- BEGIN: BOTÓN ENVIAR -->
+                            <div class="col-md-12 c-font-center c-font-bold c-font-uppercase c-margin-b-30">
+                                <input type="button" value="Enviar" onClick="buscar();" />
+                            </div>
+                            <!-- END: BOTÓN ENVIAR -->
 
-					<br /><br />
+                          </form>
+                          <!-- END: FORMULARIO -->
+                        </div>
 
-					
-						
-					
-						
-					
-					</div>
-					<!-- END: COLABORACIONES -->
-				</div>										
-			
-			</div>
+                         <!-- BEGIN: RESULTADOS DE LA BÚSQUEDA (Inicialmente vacío) -->
+                        <div class="col-md-8">
+                           <div class="container" id="ongs">
+                           </div>
+                         <!-- END: RESULTADOS DE LA BÚSQUEDA -->
+                        </div>
+
+                    </div>
+                    
+
+                    
+                    
+                    
+				</div>			
             <!-- END: PAGE CONTENT -->
-        </div>
+            </div>
         <!-- END: PAGE CONTAINER -->
+        <script src="assets/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+        <script>
 
+            // --- Función que llama a buscar-ong.php, archivo que hace la consulta a la base de daos y devuelve el texto a escribir (mensaje)
+			function buscar() {
+
+                /* Cogemos los datos de lugar del formulario */
+                var lugar = [];
+                $.each($("input[name='lugar']:checked"), function(){
+                    lugar.push($(this).val());
+                });
+                // --- Le damos formato de consulta MySQL (si no está vacío)
+                if (lugar.length > 0)
+                    lugar = " (lugar_voluntariado = " + lugar.join(" OR lugar_voluntariado = ") + ")";
+
+                /* Cogemos los datos de tipo de voluntariado del formulario */
+                var tipo = [];
+                $.each($("input[name='tipo']:checked"), function(){
+                    tipo.push($(this).val());
+                });
+                // --- Le damos formato de consulta MySQL (si no está vacío)
+                if (tipo.length > 0) {
+                    tipo = "(tipo_voluntariado = " + tipo.join(" OR tipo_voluntariado = ") + ")";
+                    // --- Si se ha seleccionado lugar, hay que preceder la condición de tipo por un AND para que funcione la consulta MySQL
+                    if (lugar.length > 0)
+                        tipo = 'AND ' + tipo;
+                }
+
+                /* Enviamos los datos a la página PHP encargada de proesarlos y esta nos devuelve el texto a escribir en el div id="ongs" */
+				if (lugar != "" || tipo != "") {
+					$.post("./mysql/buscar-ong.php", {valorBusqueda: [lugar, tipo]}, function(mensaje) {
+						$("#ongs").html(mensaje);
+					}); 
+				} else { 
+					$("#ongs").html('');
+                }
+			};
+
+            // --- Función que pone el texto cuando aún no ha habido resultados d ela búsqueda
+			function init() {
+				$("#ongs").html('');
+			}
+            
+            // --- Función que se ejecuta al cargarse la página (llama a init)
+            $(document).ready(init);
+        </script>
 <?php
 
 // --- Escribimos el pie de página (el archivo de configuración ya está incluido)
