@@ -29,7 +29,7 @@ escribe_cabecera();
 				<div class="container">
 				
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<!-- BEGIN: CONTRIBUCIONES -->
 							<div class="c-content-media-1 c-bordered wow animated fadeInUp">
 								<div class="col-md-12">
@@ -58,7 +58,7 @@ escribe_cabecera();
 									
 							</div>
 						</div>
-						<div class="col-md-6 wow animated fadeInLeft">
+						<div class="col-md-8 wow animated bounceInDown"> 
 							<img src="./assets/base/img/volunfair/ayuda/charity.svg" width="75%" alt="¡Colabora con VOLUNFAIR!" class="img-centrada" />
 						</div>
 								

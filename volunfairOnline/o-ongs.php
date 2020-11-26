@@ -58,14 +58,14 @@ escribe_cabecera();
 									<?php
                                         // --- Abrir la base de datos con usuario visitante
                                         $sql = Abrir_base();
-                                        $result = $sql->Select(" SELECT `id_lugar`, `pais_lugar` FROM `lugar`");
+                                        $result = $sql->Select(" SELECT `id_voluntariado`, `pais_lugar` FROM `lugar`");
                                         
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
-                                            throw new Exception($sql->error);
+                                            throw new Exception('No se ha podido realizar la consulta.');
                                         } else {
                                             while($row = mysqli_fetch_array($result)) {
-                                                echo ('<label><input type="checkbox" value="'.htmlspecialchars(stripslashes($row['id_lugar'])).'" name="lugar" id="lugar" />'.htmlspecialchars(stripslashes($row['pais_lugar'])).'</label><br />');
+                                                echo ('<label><input type="checkbox" value="'.htmlspecialchars(stripslashes($row['id_voluntariado'])).'" name="lugar" id="lugar" />'.htmlspecialchars(stripslashes($row['pais_lugar'])).'</label><br />');
                                             }
                                         }
                                     ?>									
