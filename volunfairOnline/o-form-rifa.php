@@ -50,10 +50,7 @@ escribe_cabecera();
 							// --- Form Button
 							new button ({
 								id : 'boton1',
-								defaultTxt : '¡Enviar tu inscripción!',
-								options : {
-									style : 'color: blue; font-size : 1em;'
-								}
+								defaultTxt : '¡Enviar tu inscripción!'
 							}),
 							// --- Form fields
 							new field ({

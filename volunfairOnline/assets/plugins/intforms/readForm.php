@@ -22,6 +22,7 @@ $create = (!$id || $formOptions['mode'] == 'create') ? 1 : 0;		// --- If no ID s
 
 // --- Inserting the date where the form is fulfilled
 if ($create) {
+
 	// --- Inserting the date
 	$result = $sql->query('
 		INSERT INTO '.$dbTable.' SET '.$timeField.' := now();
@@ -33,7 +34,7 @@ if ($create) {
 	$id = mysqli_insert_id($sql->CONNECTION);
 	
 } else {
-		echo 'UPDATE '.$dbTable.' SET '.$timeField.' := now() WHERE '.$idField.' = '.$id.';';
+	
 	// --- Inserting the date
 	$result = $sql->query('
 		UPDATE '.$dbTable.' SET '.$timeField.' := now() WHERE '.$idField.' = '.$id.';
@@ -68,8 +69,6 @@ for ($i = 0, $j = 0; $i < count($formData); $i++) {
 				$string2insert .= ($k ? ', ' : '').$data2insert[$k]['id'].' := "'.$data2insert[$k]['content'].'"';
 			}
 			$string2insert .= ' WHERE '.$idField.' = '.$id.';';
-			
-			echo $string2insert.'<br />';
 			
 			// --- Editing the db
 			$result = $sql->query(
