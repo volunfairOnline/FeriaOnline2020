@@ -26,10 +26,12 @@
 		$consultaBusquedaTipo = $consultaBusqueda[1];
 
 		// --- Variable con el texto de la consulta
-		$consulta_ong_texto = "SELECT DISTINCT nombre_ong, descripcion_ong, voluntariado_ong, rs_ong, email_ong,logo_ong
+		$consulta_ong_texto = "SELECT DISTINCT nombre_ong, descripcion_ong, voluntariado_ong, email_ong,logo_ong
 		FROM `ongs` , `voluntariado`
 		WHERE ". $consultaBusquedaPais . "" . $consultaBusquedaTipo .
 		" AND ong_voluntariado = id_ong;";
+
+		echo $consulta_ong_texto;
 
 		$consulta_ong = $sql->Select($consulta_ong_texto);
 
