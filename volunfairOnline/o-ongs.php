@@ -151,7 +151,7 @@ escribe_cabecera();
 
                 /* Enviamos los datos a la página PHP encargada de proesarlos y esta nos devuelve el texto a escribir en el div id="ongs" */
 				if (lugar != "" || tipo != "") {
-					$.post("./mysql/buscar-ong.php", {valorBusqueda: [lugar, tipo]}, function(mensaje) {
+					$.post("./mysql/o-buscar-ong.php", {valorBusqueda: [lugar, tipo]}, function(mensaje) {
 						$("#ongs").html(mensaje);
 					}); 
 				} else { 
