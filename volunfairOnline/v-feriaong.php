@@ -3,6 +3,23 @@
 // --- Archivo con las funciones de configuración (cabeceras, pie, ...)
 include ('./scripts/config.php');
 
+//consulta de los paramétros para crear la pagina web de la ong
+
+$id_recibido_ong=$id_recibido[0];
+
+//cambiar los nombre en función de la base de datos
+$consulta_pagina= "SELECT nombre_ong, texto_ong, color_ong, logo_ong, imagen_ong, web_ong, rd_ong
+FROM `bbdd`
+WHERE id_ong =" . $id_recibido_ong .";";
+
+$nombre=$consulta_pagina[0];
+$texto=$consulta_pagina[1];
+$color=$consulta_pagina[2];
+$logo=$consulta_pagina[3];
+$imagen=$consulta_pagina[4];
+$web=$consulta_pagina[5];
+$rs=$consulta_pagina[6];
+
 // --- Escribimos las cabeceras
 escribe_cabecera();
 
