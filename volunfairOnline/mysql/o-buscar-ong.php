@@ -53,22 +53,51 @@
 			
 		// --- Si existe, las mostramos todas (el siguiente código HTML muestra cómo aparece una de ellas; como es un bucle, todo se repite)
 		} else {
-			for ($i = 0; $i < $nfilas_ong; $i++) {
+           if($nfilas_ong%2==0){
+			for ($i =0; $i < $nfilas_ong; $i=$i+2) {
 				echo '<div class="row">'."\n";
-				echo '	<div class="col-md-12 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
-				echo '		<img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="80" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" />'."\n";
+				echo '	<div class="col-md-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+				echo '		<img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" />'."\n";
 				echo '		<p> <b>ONG</b>: '.$fila_ong[$i]['nombre_ong']."\n";
 				echo '		<br>'."\n";
-				echo '		<b>Descripci&oacute;n</b>: '.htmlspecialchars(stripslashes($fila_ong[$i]['descripcion_ong']))."\n";
-				echo '		<br>'."\n";
-				echo '		<b>Voluntariado</b>: '.htmlspecialchars(stripslashes($fila_ong[$i]['voluntariado_ong']))."\n";
-				echo '		<br>'."\n";
-				echo '		<b>Puedes contactar</b> a trav&eacute;s de '.htmlspecialchars(stripslashes($fila_ong[$i]['rs_ong']))."\n";
-				echo '		</p>'."\n";
 				echo '	</div>'."\n";
+				echo '	<div class="col-md-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+				echo '		<img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i+1]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i+1]['nombre_ong'])).'" />'."\n";
+				echo '		<p> <b>ONG</b>: '.$fila_ong[$i+1]['nombre_ong']."\n";
+				echo '		<br>'."\n";
+				echo '	</div>'."\n";   
 				echo '</div>'."\n";
 				echo '<br />'."\n";
 			}
+		   }
+		   else{
+            for ($i =0; $i < $nfilas_ong-1; $i=$i+2) {
+				echo '<div class="row">'."\n";
+				echo '	<div class="col-md-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+				echo '		<img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" />'."\n";
+				echo '		<p> <b>ONG</b>: '.$fila_ong[$i]['nombre_ong']."\n";
+				echo '		<br>'."\n";
+				echo '	</div>'."\n";
+				echo '	<div class="col-md-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+				echo '		<img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i+1]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i+1]['nombre_ong'])).'" />'."\n";
+				echo '		<p> <b>ONG</b>: '.$fila_ong[$i+1]['nombre_ong']."\n";
+				echo '		<br>'."\n";
+				echo '	</div>'."\n";   
+				echo '</div>'."\n";
+				echo '<br />'."\n";
+			}
+                echo '<div class="row">'."\n";
+				echo '	<div class="col-md-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+				echo '		<img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" />'."\n";
+				echo '		<p> <b>ONG</b>: '.$fila_ong[$i]['nombre_ong']."\n";
+				echo '		<br>'."\n";
+				echo '	</div>'."\n";
+                echo '	<div class="col-md-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+				echo '	</div>'."\n";   
+				echo '</div>'."\n";
+				echo '<br />'."\n";
+
+		   }	
 		}
 	}
 	
