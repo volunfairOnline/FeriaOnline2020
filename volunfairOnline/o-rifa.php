@@ -59,7 +59,7 @@ escribe_cabecera();
 
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
-                                           // throw new Exception(mysqli_error($sql));
+                                           throw new Exception('Error en la consulta');
                                         } 
                                         else {
 											echo '<div class="row">'."\n";

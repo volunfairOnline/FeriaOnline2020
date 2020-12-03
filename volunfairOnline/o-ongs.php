@@ -42,11 +42,13 @@ escribe_cabecera();
                         </div>
                     </div>
                 </div>
-                
+                 
                 <div class="c-container">
-                    <!-- BEGIN: FORMULARIO -->
+                  
                     <div class="row">
-                        <form class="formulario" method="post">
+                        <div class="col-md-4">
+                          <!-- BEGIN: FORMULARIO -->
+                          <form class="formulario" method="post">
                             <!-- BEGIN: LUGARES DE VOLUNTARIADO -->
                             <div class="col-md-6 c-font-center c-font-bold c-font-uppercase c-margin-b-30">
                                 
@@ -60,7 +62,7 @@ escribe_cabecera();
                                         
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
-                                            throw new Exception('Error en la consulta.');
+                                            throw new Exception('No se ha podido realizar la consulta.');
                                         } else {
                                             while($row = mysqli_fetch_array($result)) {
                                                 echo ('<label><input type="checkbox" value="'.htmlspecialchars(stripslashes($row['id_voluntariado'])).'" name="lugar" id="lugar" />'.htmlspecialchars(stripslashes($row['pais_lugar'])).'</label><br />');
@@ -89,7 +91,7 @@ escribe_cabecera();
                                 </div>
                                 
                             </div>
-                            <!-- BEGIN: TIPOS DE VOLUNTARIADO -->
+                            <!-- END: TIPOS DE VOLUNTARIADO -->
                             
                             <!-- BEGIN: BOTÓN ENVIAR -->
                             <div class="col-md-12 c-font-center c-font-bold c-font-uppercase c-margin-b-30">
@@ -97,15 +99,23 @@ escribe_cabecera();
                             </div>
                             <!-- END: BOTÓN ENVIAR -->
 
-                        </form>
+                          </form>
+                          <!-- END: FORMULARIO -->
+                        </div>
+
+                         <!-- BEGIN: RESULTADOS DE LA BÚSQUEDA (Inicialmente vacío) -->
+                        <div class="col-md-8">
+                           <div class="container" id="ongs">
+                           </div>
+                         <!-- END: RESULTADOS DE LA BÚSQUEDA -->
+                        </div>
 
                     </div>
-                    <!-- END: FORMULARIO -->
+                    
 
-                    <!-- BEGIN: RESULTADOS DE LA BÚSQUEDA (Inicialmente vacío) -->
-                    <div class="container" id="ongs">
-                    </div>
-                    <!-- END: RESULTADOS DE LA BÚSQUEDA -->
+                    
+                    
+                    
 				</div>			
             <!-- END: PAGE CONTENT -->
             </div>
@@ -139,9 +149,9 @@ escribe_cabecera();
                         tipo = 'AND ' + tipo;
                 }
 
-                /* Enviamos los datos a la página PHP encargada de proesarlos y esta nos devuelve el texto a escribir en el div id="ongs" */
+                /* Enviamos los datos a la página PHP encargada de procesarlos y esta nos devuelve el texto a escribir en el div id="ongs" */
 				if (lugar != "" || tipo != "") {
-					$.post("./mysql/buscar-ong.php", {valorBusqueda: [lugar, tipo]}, function(mensaje) {
+					$.post("./mysql/o-buscar-ong.php", {valorBusqueda: [lugar, tipo]}, function(mensaje) {
 						$("#ongs").html(mensaje);
 					}); 
 				} else { 

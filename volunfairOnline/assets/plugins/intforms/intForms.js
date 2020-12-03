@@ -12,7 +12,7 @@
  /* ---------------------------------------------------------------------------
  Global variables
 ------------------------------------------------------------------------------ */
-pathPHP = "../volunfairOnline/assets/plugins/intforms/";			// --- Location of PHP files
+pathPHP = "./assets/plugins/intforms/";			// --- Location of PHP files
 
  /* ---------------------------------------------------------------------------
  Class form
@@ -145,7 +145,7 @@ class form {
 			configErrorDiv.innerHTML = messages.error;
 		// ---	Sending the info to the db	
 		} else {
-			$.post(pathPHP + pathPHP + "readForm.php", {formOptions: formConfig, formData: formResults}, function(formSendStatus) {
+			$.post(pathPHP + "readForm.php", {formOptions: formConfig, formData: formResults}, function(formSendStatus) {
 				$("#vuelta").html(formSendStatus);
 				//document.getElementById('vuelta').innerHTML = messages.ok;
 			});
@@ -412,7 +412,7 @@ class button {
 		var but = document.createElement("input");
 		but.id = this.id;
 		but.name = this.id;
-		but.type = 'button';
+		but.type = 'submit';
 		
 		// --- Default text
 		if (this.defaultTxt) {
