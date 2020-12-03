@@ -44,15 +44,12 @@ escribe_cabecera();
                         <div class="col-md-12">
                             <div class="c-content-media-1 c-bordered wow animated fadeInRight" style="min-height: 380px;">
                                 <div class="c-content-title-1">
-                                   <h3 class="c-font-uppercase c-font-bold">Visión</h3>
+                                   <h3 class="c-font-uppercase c-font-bold"><?php echo $nombre; ?></h3>
                                    <div class="c-line-left c-theme-bg"></div>
                                  </div>
                                 
 								<p>
-									En VOLUNFAIR creemos en una juventud comprometida, estamos convencidos del potencial transformador que tiene nuestra generación 
-									y por eso apostamos por ello. 
-									
-									VARIABLE = <?php echo $id_recibido_ong; ?>
+									<?php echo $texto; ?>
 								</p>
  
                             </div>
