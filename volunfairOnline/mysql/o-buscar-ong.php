@@ -26,7 +26,7 @@
 		$consultaBusquedaTipo = $consultaBusqueda[1];
 
 		// --- Variable con el texto de la consulta
-		$consulta_ong_texto = "SELECT DISTINCT nombre_ong, descripcion_ong, voluntariado_ong, email_ong,logo_ong
+		$consulta_ong_texto = "SELECT DISTINCT id_ong, nombre_ong, descripcion_ong, voluntariado_ong, email_ong,logo_ong
 		FROM `ongs` , `voluntariado`
 		WHERE ". $consultaBusquedaPais . "" . $consultaBusquedaTipo .
 		" AND ong_voluntariado = id_ong;";
@@ -57,13 +57,13 @@
 			for ($i =0; $i < $nfilas_ong; $i=$i+2) {
 				echo '<div class="row">'."\n";
 				echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
-				echo '		<a href="o-entidad?id=i"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" /></a>'."\n";
-				echo '		<a href="o-entidad?id=i"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i]['nombre_ong']."\n";
+				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" /></a>'."\n";
+				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i]['nombre_ong']."\n";
 				echo '		<br></h2></a>'."\n";
 				echo '	</div>'."\n";
 				echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
-				echo '		<a href="o-entidad?id=i+1"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i+1]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i+1]['nombre_ong'])).'" /></a>'."\n";
-				echo '		<a href="o-entidad?id=i+1"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i+1]['nombre_ong']."\n";
+				echo '		<a href="o-entidad?id='.$fila_ong[$i+1]['id_ong'].'"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i+1]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i+1]['nombre_ong'])).'" /></a>'."\n";
+				echo '		<a href="o-entidad?id='.$fila_ong[$i+1]['id_ong'].'"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i+1]['nombre_ong']."\n";
 				echo '		<br></h2></a>'."\n";
 				echo '	</div>'."\n";   
 				echo '</div>'."\n";
@@ -74,13 +74,13 @@
             for ($i =0; $i < $nfilas_ong-1; $i=$i+2) {
 				echo '<div class="row">'."\n";
 				echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
-				echo '		<a href="o-entidad?id=i"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" /></a>'."\n";
-				echo '		<a href="o-entidad?id=i"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i]['nombre_ong']."\n";
+				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" /></a>'."\n";
+				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i]['nombre_ong']."\n";
 				echo '		<br></h2></a>'."\n";
 				echo '	</div>'."\n";
 				echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
-				echo '		<a href="o-entidad?id=i+1"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i+1]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i+1]['nombre_ong'])).'" /></a>'."\n";
-				echo '		<a href="o-entidad?id=i+1"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i+1]['nombre_ong']."\n";
+				echo '		<a href="o-entidad?id='.$fila_ong[$i+1]['id_ong'].'"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i+1]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i+1]['nombre_ong'])).'" /></a>'."\n";
+				echo '		<a href="o-entidad?id='.$fila_ong[$i+1]['id_ong'].'"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i+1]['nombre_ong']."\n";
 				echo '		<br></h2></a>'."\n";
 				echo '	</div>'."\n";   
 				echo '</div>'."\n";
@@ -88,8 +88,8 @@
 			}
                 echo '<div class="row">'."\n";
 				echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
-				echo '		<a href="o-entidad?id=i"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" /></a>'."\n";
-				echo '		<a href="o-entidad?id=i"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i]['nombre_ong']."\n";
+				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" /></a>'."\n";
+				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i]['nombre_ong']."\n";
 				echo '		<br></h2></a>'."\n";
 				echo '	</div>'."\n";
                 echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
