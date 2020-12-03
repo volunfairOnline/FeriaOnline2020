@@ -8,8 +8,15 @@ include ('./scripts/o-config.php');
 escribe_cabecera();
 
 ?>
+        <div class="c-content-title-1">
+        <h3 class="c-font-uppercase c-center c-font-bold">Patrocinadores</h3>
+        <div class="c-line-center c-theme-bg"></div>
+        </div>
+        
+        
         <!-- BEGIN: PAGE CONTAINER -->
-        <div class="c-content-box c-size-md c-bg-white">
+        <!-- MODELO PATROCINADORES NO MUY GRANDES --> 
+        <div class="c-content-box c-size-md c-bg-white">     
             <div class="container">
                  <div class="col-md-3">
                     <div class="item">
@@ -44,6 +51,37 @@ escribe_cabecera();
                 </div>
             </div>
         </div>
+        
+        <br /><br />
+
+        <!-- MODELO PATROCINADORES GRANDES --> 
+        <div class="c-content-box c-size-md c-bg-white">    
+            <div class="container">        
+                <div class="col-md-1"> 
+                <a>
+                </a>
+                </div>
+                <div class="col-md-5">
+                        <bold><h3 class="c-center">Talgo</h3></bold>
+                        <a href="http://www.etsii.upm.es/" target="_blank">
+                            <img src="assets/base/img/volunfair/patrocinadores/logoE.jpg" title ="ETSII Madrid" alt="ETSII Madrid"  width="100%" />
+                        </a>
+                </div>
+                <div class="col-md-5">
+                        <bold><h3 class=" c-center">Talgo</h3></bold>
+                        <a href="https://www.talgo.com/" target="_blank">
+                            <img src="assets/base/img/volunfair/patrocinadores/logo-talgo.png" title ="Talgo" alt="Talgo" style="padding-top: 10%; padding-left: 10%;" width="90%" />
+                        </a>
+                </div>
+                <div class="col-md-1">
+                <a>
+                </a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
         <!-- END: PAGE CONTAINER -->
 
 <?php
