@@ -5,7 +5,9 @@ include ('./scripts/config.php');
 
 //consulta de los paramétros para crear la pagina web de la ong
 
-$id_recibido_ong=$id_recibido[0];
+$id_recibido_ong = $_GET["id"];
+
+//$id_recibido_ong=$id_recibido[0];
 
 //cambiar los nombre en función de la base de datos
 $consulta_pagina= "SELECT nombre_ong, texto_ong, color_ong, logo_ong, imagen_ong, web_ong, rd_ong
@@ -49,6 +51,8 @@ escribe_cabecera();
 								<p>
 									En VOLUNFAIR creemos en una juventud comprometida, estamos convencidos del potencial transformador que tiene nuestra generación 
 									y por eso apostamos por ello. 
+									
+									VARIABLE = <?php echo $id_recibido_ong; ?>
 								</p>
  
                             </div>
