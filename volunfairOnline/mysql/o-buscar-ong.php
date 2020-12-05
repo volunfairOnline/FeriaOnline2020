@@ -25,13 +25,17 @@
 		$consultaBusquedaPais = $consultaBusqueda[0];
 		$consultaBusquedaTipo = $consultaBusqueda[1];
 
+		if (empty($consultaBusquedaPais) && empty($consultaBusquedaTipo)) {
+			$escribe_and = '';
+		} else {
+			$escribe_and = 'AND';
+		}
+
 		// --- Variable con el texto de la consulta
 		$consulta_ong_texto = "SELECT DISTINCT id_ong, nombre_ong, descripcion_ong, voluntariado_ong, email_ong,logo_ong
 		FROM `ongs` , `voluntariado`
-		WHERE ". $consultaBusquedaPais . "" . $consultaBusquedaTipo .
-		" AND ong_voluntariado = id_ong;";
-
-		
+		WHERE ". $consultaBusquedaPais . "" . $consultaBusquedaTipo
+		. $escribe_and." ong_voluntariado = id_ong;";
 
 		$consulta_ong = $sql->Select($consulta_ong_texto);
 
@@ -56,12 +60,12 @@
            if($nfilas_ong%2==0){
 			for ($i =0; $i < $nfilas_ong; $i=$i+2) {
 				echo '<div class="row">'."\n";
-				echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+				echo '	<div class="col-sm-6 c-content-media-1 c-bordered c-center wow fadeIn animated">'."\n";
 				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" /></a>'."\n";
 				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i]['nombre_ong']."\n";
 				echo '		<br></h2></a>'."\n";
 				echo '	</div>'."\n";
-				echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+				echo '	<div class="col-sm-6 c-content-media-1 c-bordered c-center  wow fadeIn animated">'."\n";
 				echo '		<a href="o-entidad?id='.$fila_ong[$i+1]['id_ong'].'"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i+1]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i+1]['nombre_ong'])).'" /></a>'."\n";
 				echo '		<a href="o-entidad?id='.$fila_ong[$i+1]['id_ong'].'"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i+1]['nombre_ong']."\n";
 				echo '		<br></h2></a>'."\n";
@@ -73,12 +77,12 @@
 		   else{
             for ($i =0; $i < $nfilas_ong-1; $i=$i+2) {
 				echo '<div class="row">'."\n";
-				echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+				echo '	<div class="col-sm-6 c-content-media-1 c-bordered c-center wow fadeIn animated">'."\n";
 				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" /></a>'."\n";
 				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i]['nombre_ong']."\n";
 				echo '		<br></h2></a>'."\n";
 				echo '	</div>'."\n";
-				echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+				echo '	<div class="col-sm-6 c-content-media-1 c-bordered c-center wow fadeIn animated">'."\n";
 				echo '		<a href="o-entidad?id='.$fila_ong[$i+1]['id_ong'].'"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i+1]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i+1]['nombre_ong'])).'" /></a>'."\n";
 				echo '		<a href="o-entidad?id='.$fila_ong[$i+1]['id_ong'].'"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i+1]['nombre_ong']."\n";
 				echo '		<br></h2></a>'."\n";
@@ -87,12 +91,12 @@
 				echo '<br />'."\n";
 			}
                 echo '<div class="row">'."\n";
-				echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+				echo '	<div class="col-sm-6 c-content-media-1 c-bordered c-center wow fadeIn animated">'."\n";
 				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="180" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" /></a>'."\n";
 				echo '		<a href="o-entidad?id='.$fila_ong[$i]['id_ong'].'"><h2 class="c-font-24  c-font-bold"> '.$fila_ong[$i]['nombre_ong']."\n";
 				echo '		<br></h2></a>'."\n";
 				echo '	</div>'."\n";
-                echo '	<div class="col-sm-6 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+                echo '	<div class="col-sm-6 c-content-media-1 c-bordered c-center wow fadeIn animated">'."\n";
 				echo '	</div>'."\n";   
 				echo '</div>'."\n";
 				echo '<br />'."\n";
