@@ -6,14 +6,11 @@ function escribe_menu () {
 	// --- En la siguiente matriz ponemos el nombre del archivo y el nombre que queremos que aparezca en el menú superior.
 	// --- NO PONER COMA TRAS LA ÚLTIMA FILA
 	$menu = [
-		["archivo" => "index", 			"nombre" => "Inicio"],
-		["archivo" => "v-quienes", 		"nombre" => "Equipo"],
-		["archivo" => "v-voluntario", 	"nombre" => "ONGs"],
-		["archivo" => "v-viene", 		"nombre" => "Ed. 2020"],
-		["archivo" => "v-anteriores", 	"nombre" => "Anteriores"],
-		["archivo" => "v-premio", 		"nombre" => "Premio VOLUNFAIR"],
-		["archivo" => "v-contactar", 	"nombre" => "Contacto"],
-		["archivo" => "v-colabora",		"nombre" => "Tu Ayuda"]
+		["archivo" => "index.php", 			"nombre" => "Inicio"],
+		["archivo" => "o-ongs.php", 		"nombre" => "Listado ONGs"],
+		["archivo" => "v-voluntario", 	"nombre" => "Eventos"],
+		["archivo" => "o-form-rifa.php", 		"nombre" => "Rifa VOLUNFAIR"],
+		["archivo" => "v-anteriores", 	"nombre" => "Patrocinadores"]
 	];
 	
 	// --- Barra del menú
