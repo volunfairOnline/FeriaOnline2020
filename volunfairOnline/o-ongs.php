@@ -162,6 +162,9 @@ escribe_cabecera();
             // --- Función que pone el texto cuando aún no ha habido resultados d ela búsqueda
 			function init() {
 				$("#ongs").html('');
+                $.post("./mysql/o-buscar-ong.php", {valorBusqueda: [,]}, function(mensaje) {
+						$("#ongs").html(mensaje);
+					});
 			}
             
             // --- Función que se ejecuta al cargarse la página (llama a init)
