@@ -211,3 +211,9 @@ a:active, a:hover, a:focus {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Que las col-md- de una misma row se alineen verticalmente. Se aplica AL ROW */
+.align-items-center {
+	display: flex;
+    align-items: center;
+}

@@ -1,7 +1,7 @@
 <?php 
 
 // --- Archivo con las funciones de configuración (cabeceras, pie, ...)
-include ('./scripts/config.php');
+include ('./scripts/o-config.php');
 
 session_start();
 // --- Iniciar la clase de conexión a la base de datos
