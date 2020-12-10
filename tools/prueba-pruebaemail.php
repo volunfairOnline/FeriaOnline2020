@@ -6,8 +6,8 @@ include ('./scripts/o-config.php');
 
 // --- Escribimos las cabeceras
 escribe_cabecera();
-<br /><br />
-<br /><br />
+<br> <br />
+<br> <br />
 
 ?>
     <div class="c-content-title-1">
