@@ -46,6 +46,7 @@ escribe_cabecera();
                 <div class="c-container">
                   
                     <div class="row">
+                     <a href="#" id="alternar-panel-oculto">Buscador</a>
                         <div id="panel-oculto"  class="col-md-4">
                          
                           <!-- BEGIN: FORMULARIO -->
@@ -110,7 +111,7 @@ escribe_cabecera();
                            </div>
                          <!-- END: RESULTADOS DE LA BÚSQUEDA -->
                         </div>
-                      <a href="#" id="alternar-panel-oculto">Buscador</a>
+                      
                     </div>
                     
 
@@ -167,16 +168,8 @@ escribe_cabecera();
 						$("#ongs").html(mensaje);
                     });
                 $('#alternar-panel-oculto').toggle(
-                    /* 
-                    Primer click.
-                    Función que descubre un panel oculto
-                    y cambia el texto del botón.
-                    */
-                    function(e){
-                        $('#panel-oculto').slideDown();
-                        $(this).text('Cerrar el buscador');
-                        e.preventDefault();
-                    },// Separamos las dos funciones con una coma
+                    
+                    // Separamos las dos funciones con una coma
                     /* 
                     Segundo click.
                     Función que oculta el panel
@@ -186,6 +179,16 @@ escribe_cabecera();
                         $('#panel-oculto').slideUp();
                         $(this).text('Mostrar el buscador');
                         e.preventDefault(); 
+                    },
+                    /* 
+                    Primer click.
+                    Función que descubre un panel oculto
+                    y cambia el texto del botón.
+                    */
+                    function(e){
+                        $('#panel-oculto').slideDown();
+                        $(this).text('Cerrar el buscador');
+                        e.preventDefault();
                     }
                 );     
 			}
