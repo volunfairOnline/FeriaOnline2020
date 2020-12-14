@@ -46,7 +46,9 @@ escribe_cabecera();
                 <div class="c-container">
                   
                     <div class="row">
-                        <div class="col-md-4">
+                     <a href="#" id="alternar-panel-oculto">Buscador</a>
+                        <div id="panel-oculto"  class="col-md-4">
+                         
                           <!-- BEGIN: FORMULARIO -->
                           <form class="formulario" method="post">
                             <!-- BEGIN: LUGARES DE VOLUNTARIADO -->
@@ -109,7 +111,7 @@ escribe_cabecera();
                            </div>
                          <!-- END: RESULTADOS DE LA BÚSQUEDA -->
                         </div>
-
+                      
                     </div>
                     
 
@@ -164,7 +166,31 @@ escribe_cabecera();
 				$("#ongs").html('');
                 $.post("./mysql/o-buscar-ong.php", {valorBusqueda: [,]}, function(mensaje) {
 						$("#ongs").html(mensaje);
-					});
+                    });
+                $('#alternar-panel-oculto').toggle(
+                    
+                    // Separamos las dos funciones con una coma
+                    /* 
+                    Segundo click.
+                    Función que oculta el panel
+                    y vuelve a cambiar el texto del botón.
+                    */
+                    function(e){
+                        $('#panel-oculto').slideUp();
+                        $(this).text('Mostrar el buscador');
+                        e.preventDefault(); 
+                    },
+                    /* 
+                    Primer click.
+                    Función que descubre un panel oculto
+                    y cambia el texto del botón.
+                    */
+                    function(e){
+                        $('#panel-oculto').slideDown();
+                        $(this).text('Cerrar el buscador');
+                        e.preventDefault();
+                    }
+                );     
 			}
             
             // --- Función que se ejecuta al cargarse la página (llama a init)
