@@ -6,11 +6,13 @@ function escribe_menu () {
 	// --- En la siguiente matriz ponemos el nombre del archivo y el nombre que queremos que aparezca en el menú superior.
 	// --- NO PONER COMA TRAS LA ÚLTIMA FILA
 	$menu = [
-		["archivo" => "index.php", 	      "nombre" => "Inicio"],
-		["archivo" => "o-ongs.php", 	  "nombre" => "Listado ONGs"],
-		["archivo" => "v-quienes", 		  "nombre" => "Eventos"],
-		["archivo" => "o-form-rifa.php",  "nombre" => "Rifa VOLUNFAIR"],
-		["archivo" => "v-contactar", 	  "nombre" => "Patrocinadores"]
+		["archivo" => "", 	      "nombre" => "Inicio"],
+		["archivo" => "o-ongs", 	  "nombre" => "Entidades"],
+		["archivo" => "", 		  "nombre" => "Eventos"],
+		["archivo" => "o-rifa",  "nombre" => "Rifa VOLUNFAIR"],
+		["archivo" => "o-plantillapatrocinadores", 	  "nombre" => "Patrocinadores"],
+		["archivo" => "index", 	  	  "nombre" => "Web VOLUNFAIR"],
+		["archivo" => "", 	  "nombre" => "Acceso stands"]
 
 	];
 	
