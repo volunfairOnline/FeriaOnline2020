@@ -110,7 +110,7 @@ escribe_cabecera();
                             </div>
 
                             <!-- BEGIN: RESULTADOS DE LA BÚSQUEDA (Inicialmente vacío) -->
-                            <div class="col-md-8" id="ongs">
+                            <div class="col-md-12" id="ongs">
                             </div>
                             <!-- END: RESULTADOS DE LA BÚSQUEDA -->
                         
