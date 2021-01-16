@@ -6,13 +6,13 @@ function escribe_menu () {
 	// --- En la siguiente matriz ponemos el nombre del archivo y el nombre que queremos que aparezca en el menú superior.
 	// --- NO PONER COMA TRAS LA ÚLTIMA FILA
 	$menu = [
-		["archivo" => "", 	      "nombre" => "Inicio"],
-		["archivo" => "o-ongs", 	  "nombre" => "Entidades"],
-		["archivo" => "", 		  "nombre" => "Eventos"],
-		["archivo" => "o-rifa",  "nombre" => "Rifa VOLUNFAIR"],
-		["archivo" => "o-plantillapatrocinadores", 	  "nombre" => "Patrocinadores"],
-		["archivo" => "index", 	  	  "nombre" => "Web VOLUNFAIR"],
-		["archivo" => "", 	  "nombre" => "Acceso stands"]
+		["archivo" => "o-2021", 	  		"nombre" => "Inicio"],
+		["archivo" => "o-ongs", 	 		"nombre" => "Entidades"],
+		["archivo" => "", 		  			"nombre" => "Eventos"],
+		["archivo" => "o-rifa",  			"nombre" => "Rifa VOLUNFAIR"],
+		["archivo" => "o-patrocinadores", 	"nombre" => "Patrocinadores"],
+		["archivo" => "index", 	  	  		"nombre" => "Web VOLUNFAIR"],
+		["archivo" => "", 	  				"nombre" => "Acceso stands"]
 
 	];
 	
@@ -62,6 +62,7 @@ function escribe_cabecera ($es_index = 0) {
 			echo '<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />'."\n";
 			echo '<link href="assets/plugins/animate/animate.min.css" rel="stylesheet" type="text/css" />'."\n";
 			echo '<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />'."\n";
+			//echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">'."\n";
 			echo '<!-- END GLOBAL MANDATORY STYLES -->'."\n";
 			
 			// --- Plugins
@@ -83,6 +84,7 @@ function escribe_cabecera ($es_index = 0) {
 			echo '<link href="assets/base/css/contador.css" rel="stylesheet" type="text/css" />'."\n";					// --- Para el contador
 			echo '<link href="assets/base/css/timeline.css" rel="stylesheet" type="text/css" />'."\n"; 					// --- Para el timeline de "Ediciones anteriores"
 			echo '<link href="assets/base/css/volunfair.css" rel="stylesheet" type="text/css" />'."\n"; 				// --- Estilos propios de VOLUNFAIR (para no destruir nada del tema)
+			//echo '<link href="assets/base/css/online.css" rel="stylesheet" type="text/css" />'."\n"; 					// --- Estilos propios de VOLUNFAIR - Online (para no destruir nada del tema)
 			echo '<!-- END THEME STYLES -->'."\n";
 
 			// --- Estilos de página
@@ -200,10 +202,12 @@ function escribe_cabecera ($es_index = 0) {
 							echo '<!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->'."\n";
 							
 							// --- Menú
-							escribe_menu();
-							echo '<!-- END: MEGA MENU -->'."\n";
-							echo '<!-- END: LAYOUT/HEADERS/MEGA-MENU -->'."\n";
-							echo '<!-- END: HOR NAV -->'."\n";
+							if (!$es_index) {
+								escribe_menu();
+								echo '<!-- END: MEGA MENU -->'."\n";
+								echo '<!-- END: LAYOUT/HEADERS/MEGA-MENU -->'."\n";
+								echo '<!-- END: HOR NAV -->'."\n";
+							}
 						echo '</div>'."\n";
 
 					echo '</div>'."\n";
