@@ -16,7 +16,7 @@ escribe_cabecera();
         <div class="c-layout-page">
 		
             <!-- BEGIN: LAYOUT/BREADCRUMBS/BREADCRUMBS-3 -->
-			<div class="c-layout-breadcrumbs-1 c-bgimage c-subtitle c-fonts-uppercase c-fonts-bold c-bg-img-center" style="background-image: url(assets/base/img/volunfair/mares/mar_003.jpg)">
+			<div class="c-layout-breadcrumbs-1 c-bgimage c-subtitle c-fonts-uppercase c-fonts-bold c-bg-img-center" style="background:#515151">
                  <!--<div class="container">
 				 
                     <div class="c-page-title c-pull-left">
@@ -37,7 +37,7 @@ escribe_cabecera();
                             <div class="c-content-title-1">
                                 <h3 class="c-font-34 c-font-center c-font-bold c-font-uppercase c-margin-b-30"> PARTICIPANTES</h3>
                                 <div class="c-line-center c-theme-bg"></div>
-                                <p class="c-font-center c-font-bold c-font-uppercase c-margin-b-30">¡Selecciona tus intereses y encuentra tus ONGs más afines!</p>
+                                <p class="c-font-center c-font-bold c-font-uppercase c-margin-b-30">¡Selecciona tus intereses y encuentra tus entidades sociales más afines!</p>
                             </div>
                         </div>
                     </div>

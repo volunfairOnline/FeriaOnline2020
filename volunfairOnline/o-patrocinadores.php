@@ -8,16 +8,32 @@ include ('./scripts/o-config.php');
 escribe_cabecera();
 
 ?>
-        <div class="c-content-title-1">
-        <h3 class="c-font-uppercase c-center c-font-bold">Patrocinadores</h3>
-        <div class="c-line-center c-theme-bg"></div>
+
+    <div class="c-layout-page">
+
+        <!-- BEGIN: LAYOUT/BREADCRUMBS/BREADCRUMBS-3 -->
+        <div class="c-layout-breadcrumbs-1 c-bgimage c-subtitle c-fonts-uppercase c-fonts-bold c-bg-img-center" style="background-image: url(assets/base/img/volunfair/mares/mar_003.jpg)">
+                <!--<div class="container">
+                
+                <div class="c-page-title c-pull-left">
+                        <p class="c-font-uppercase c-font-bold c-font-white c-font-25 c-font-slim">Quiénes Somos</p>
+                    <h4 class="c-font-white c-font-thin c-opacity-07"> Conócenos mejor </h4>
+                </div>
+            </div>-->
         </div>
-        
+        <!-- END: LAYOUT/BREADCRUMBS/BREADCRUMBS-3 -->        
         
         <!-- BEGIN: PAGE CONTAINER -->
         <!-- MODELO PATROCINADORES NO MUY GRANDES --> 
         <div class="c-content-box c-size-md c-bg-white">     
             <div class="container">
+                            
+                <div class="c-content-title-1">
+                    <h3 class="c-font-uppercase c-center c-font-bold">Patrocinadores</h3>
+                    <div class="c-line-center c-theme-bg"></div>
+                    <p class="c-font-center c-font-bold c-font-uppercase c-margin-b-30">Ellos han hecho posible VOLUNFAIR 2021</p>
+                </div>
+
                  <div class="col-md-3">
                     <div class="item">
                         <a href="https://www.airbus.com/" target="_blank">
@@ -102,6 +118,7 @@ escribe_cabecera();
         
         
         <!-- END: PAGE CONTAINER -->
+    </div>
 
 <?php
 

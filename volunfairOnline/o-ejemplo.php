@@ -62,7 +62,7 @@ escribe_cabecera();
 							<img src="./assets/base/img/volunfair/ayuda/charity.svg" width="75%" alt="¡Colabora con VOLUNFAIR!" class="img-centrada" />
 						</div>
 								
-								<!-- NOTA DE NACHO:Yo pondría aquí una foto de nuestro equipo -->
+								
 					</div>
 
 					<br /><br />
