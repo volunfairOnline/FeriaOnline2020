@@ -30,23 +30,23 @@ escribe_cabecera(1);
             <div class="container">
                 <!--- BEGIN: Tarjeta con contenido -->
                 <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
-                    <a href="./o-ongs">
+                    <a href="./o-entidades">
                         <img class="card-img-top" src="./assets/base/img/volunfair/online-logos/charity.svg" alt="Entidades">
                     </a>
                     <div class="card-body-vf">
-                        <h3><a href="./o-ongs">Entidades</a></h3>
+                        <h3><a href="./o-entidades">Entidades</a></h3>
                         <p class="card-text">Conoce a las 60 ONGs presentes en la feria. ¡Inscríbete online a ellas!</p>
                     </div>
                 </div>
                 <!--- END: Tarjeta con contenido -->
                 <!--- BEGIN: Tarjeta con contenido -->
                 <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
-                    <a href="./o-ongs">
+                    <a href="./o-entidades">
                         <img class="card-img-top" src="./assets/base/img/volunfair/online-logos/social-care.svg" alt="Entidades">
                     </a>
                     <div class="card-body-vf">
                         <details>
-                            <summary><h3><a href="./o-ongs">Entidades</a>&nbsp;&nbsp;&nbsp;&darr;</h3></summary>
+                            <summary><h3><a href="./o-entidades">Entidades</a>&nbsp;&nbsp;&nbsp;&darr;</h3></summary>
                             <p class="card-text">Conoce a las 60 ONGs presentes en la feria. ¡Inscríbete online a ellas!</p>
                         </details>
                     </div>
