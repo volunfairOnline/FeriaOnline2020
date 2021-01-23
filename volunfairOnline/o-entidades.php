@@ -48,7 +48,7 @@ escribe_cabecera();
                     <div class="row">
                         <div class="container">
                               
-                            <div class="col-md-12 c-center">
+                            <div class="col-md-12 c-center btn btn-lg btn-outline-secondary">
                                 <a href="#" id="alternar-panel-oculto">Buscador</a>
                             </div>
                             <div id="panel-oculto"  class="col-md-4" style="display: none;">

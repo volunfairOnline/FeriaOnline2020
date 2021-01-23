@@ -84,7 +84,7 @@ function escribe_cabecera ($es_index = 0) {
 			echo '<link href="assets/base/css/contador.css" rel="stylesheet" type="text/css" />'."\n";					// --- Para el contador
 			echo '<link href="assets/base/css/timeline.css" rel="stylesheet" type="text/css" />'."\n"; 					// --- Para el timeline de "Ediciones anteriores"
 			echo '<link href="assets/base/css/volunfair.css" rel="stylesheet" type="text/css" />'."\n"; 				// --- Estilos propios de VOLUNFAIR (para no destruir nada del tema)
-			//echo '<link href="assets/base/css/online.css" rel="stylesheet" type="text/css" />'."\n"; 					// --- Estilos propios de VOLUNFAIR - Online (para no destruir nada del tema)
+			echo '<link href="assets/base/css/o-general.css" rel="stylesheet" type="text/css" />'."\n"; 				// --- Estilos propios de VOLUNFAIR - Online (para no destruir nada del tema)
 			echo '<!-- END THEME STYLES -->'."\n";
 
 			// --- Estilos de página
