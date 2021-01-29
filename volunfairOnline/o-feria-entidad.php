@@ -20,73 +20,165 @@ include ('./scripts/o-config.php');
     //$logo=$consulta_pagina[3];
     //$imagen=$consulta_pagina[4];
     //$web=$consulta_pagina[5];
-    //$rs=$consulta_pagina[6];
+    //$rsface=$consulta_pagina[6];
+    //$rstwit=$consulta_pagina[7];
+    //$rsinsta=$consulta_pagina[8];
+    //$rslinked=$consulta_pagina[9];
+    //$video=$consulta_pagina[10];
+    $nombre="Caritas";
+    $texto="Hola";
+    $color="#ffd5cc";
+    $logo="caritas.jpg";
+    $imagen="en_construccion_astronautas.png";
+    $web="https://www.volunfair.com/";
+    $rsface="https://www.facebook.com/VolunFair/";
+    $rstwit="https://twitter.com/volunfair";
+    $rsinsta="https://www.instagram.com/volunfair/?hl=es";
+    $rslinked="https://www.linkedin.com/company/volunfair/?originalSubdomain=es";
+    $video="H_f5CpQbIV8";
+
 
 // --- Escribimos las cabeceras
 escribe_cabecera();
 
 ?>
         
-        <!-- BEGIN: PAGE CONTAINER -->
-        <div class="c-layout-page" style="background-color:#FF6949">
-        <!--<body style="background-color:#FF6949">-->
+    <!-- BEGIN: PAGE CONTAINER -->
+        <?php
+            echo '<div class="c-layout-page" style="background-color:'.$color.'">'."\n";
+        ?>
+        
         <!-- BEGIN: LAYOUT/BREADCRUMBS/BREADCRUMBS-3 -->
 			<div class="c-layout-breadcrumbs-1 c-bgimage c-subtitle c-fonts-uppercase c-fonts-bold c-bg-img-center" style="background:#515151">
             </div>
-            <!-- END: LAYOUT/BREADCRUMBS/BREADCRUMBS-3 -->
-            
-           <!-- <div class="c-content-box c-size-md ">-->
-			
-                    <?php
-                    //'.$logo].'  '.$nombre.'  '.$color.'
+        <!-- END: LAYOUT/BREADCRUMBS/BREADCRUMBS-3 -->
+
+        <!-- BEGIN PAGE CONTENT -->
+
+            <!-- Logo ong -->
+                <?php
                     echo '<div class="row  align-items-center">'."\n";
-                            /*echo '	<div class="col-md-2 ">'."\n";
-                            echo '	</div>'."\n";
-                            echo '	<div class="col-md-8 c-fonts-bold c-font-center c-content-media-1 ">'."\n";*/
-                            echo '	<div class="col-md-2 c-content-media-1 ">'."\n";
-                            echo '      <img width=100% src ="./assets/base/img/volunfair/ong2/caritas.jpg" />'."\n";
-                            echo '	</div>'."\n";
-                            //echo '	<div class="col-md-2">'."\n";
-                            //echo '	</div>'."\n";
-                            echo '	<div class="col-md-10 c-bg-white c-font-bold c-font-center c-font-34 c-font-uppercase c-margin-b-30">'."\n";
-                            echo '      <b>Caritas</b>'."\n";
-                            //echo '	</p>'."\n";
-                            echo '	</div>'."\n";
-                            echo '	</div>'."\n";
-                            
-                    echo '	</div>'."\n";
-                    ?>
-                    <!-- BEGIN: ONG -->
+                        echo '	<div class="c-font-center col-md-2 c-content-media-1 ">'."\n";
+                        echo '      <img width=75% src ="./assets/base/img/volunfair/ong2/'.$logo.'" />'."\n";
+                        echo '	</div>'."\n";
+                        echo '	<div class="col-md-10 c-font-bold c-font-center c-font-34 c-font-uppercase c-margin-b-30">'."\n"; //No me termina de convencer el color c-bg-white
+                            echo ' <h1 class="c-font-40 c-font-uppercase c-font-bold font-size: 50px">'.$nombre.'</h1>'."\n";
+                        echo '	</div>'."\n";
+                    echo '	</div>'."\n";             
+            echo '	</div>'."\n";
+                ?>
+            <!-- End:logo ong -->
 
-                <div class="parallax-window" data-parallax="scroll" data-bleed="100" data-speed="0.2" data-image-src="./assets/base/img/volunfair/web/en_construccion_astronautas.png">
-                    <div class="c-content-box c-size-md ">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="c-content-media-1 c-bordered wow animated fadeInRight" style="min-height: 380px;">
-                                        <div class="c-content-title-1">
-                                            <h3 class="c-font-uppercase c-font-bold">hola</h3>
-                                            <div class="c-line-left c-theme-bg"></div>
-                                        </div>
+            <!-- Imagen y descripción -->
+                <?php
+                if ($imagen!=NULL){
+                    echo ' <div class="parallax-window" data-parallax="scroll" data-bleed="100" data-speed="0.2" data-image-src="./assets/base/img/volunfair/web/'.$imagen.'">'."\n";
+                    echo '<div class="c-content-box c-size-md ">'."\n";
+                        echo ' <div class="container">'."\n";
+                            echo ' <div class="row">'."\n";
+                                echo ' <div class="col-md-12">'."\n";
+                                    echo ' <div class="c-content-media-1 c-bordered wow animated fadeInRight" style="min-height: 380px;">'."\n";
+                                        echo ' <div class="c-content-title-1">'."\n";
+                                            echo ' <h3 class="c-font-uppercase c-font-bold">Actividades</h3>'."\n";
+                                            echo ' <div class="c-line-left c-theme-bg"></div>'."\n";
+                                        echo ' </div>'."\n";
+                                                
+                                        echo ' <p>'."\n";
+                                            echo ''.$texto.' '."\n";
+                                        echo ' </p>'."\n";
+                
+                                    echo ' </div>'."\n";
+                                echo ' </div>'."\n";
                                         
-                                        <p>
-                                            hola
-                                        </p>
-        
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: ONG -->
+                            echo ' </div>'."\n";
+                        echo ' </div>'."\n";
+                    echo ' </div>'."\n";
+                    echo ' </div>'."\n";         
+                } else {
+                    echo '<div class="c-content-box c-size-md ">'."\n";
+                        echo ' <div class="container">'."\n";
+                            echo ' <div class="row">'."\n";
+                                echo ' <div class="col-md-12">'."\n";
+                                    echo ' <div class="c-content-media-1 c-bordered wow animated fadeInRight" style="min-height: 380px;">'."\n";
+                                        echo ' <div class="c-content-title-1">'."\n";
+                                            echo ' <h3 class="c-font-uppercase c-font-bold">Actividades</h3>'."\n";
+                                            echo ' <div class="c-line-left c-theme-bg"></div>'."\n";
+                                        echo ' </div>'."\n";
+                                                
+                                        echo ' <p>'."\n";
+                                            echo ''.$texto.' '."\n";
+                                        echo ' </p>'."\n";
+                
+                                    echo ' </div>'."\n";
+                                echo ' </div>'."\n";
+                                        
+                            echo ' </div>'."\n";
+                        echo ' </div>'."\n";
+                    echo ' </div>'."\n";
+                }
+                ?>
+            <!-- End:Imagen y descripción -->
 
-            <!-- END: PAGE CONTENT -->
-            </div>
+            <!-- Video -->
+            <?php 
+                if($video!=NULL){
+                    echo ' <div class="c-bg-white c-content-media-1 c-bordered">'."\n";
+                    echo ' <div class="row c-center wow animated fadeInUp">'."\n";
+                        echo ' <iframe width="784" height="441" src="https://www.youtube-nocookie.com/embed/'.$video.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'."\n";
+                    echo ' </div>'."\n";
+                    echo ' <br />   '."\n";                        
+                    echo ' </div>'."\n";
+                        }
+            ?>
+            <!-- End:Video -->
+
+            <!-- Web y RS -->
+            <?php
+            echo ' <div class="container">'."\n";
+            echo ' <div class="row">'."\n";
+                echo ' <div class="c-center col-md-6 c-bg-white c-content-media-1">'."\n";
+                    echo ' <div class="c-content-title-1">'."\n";
+                        echo ' <h3 class="c-font-bold">También puedes contactar con la asociación a través de:</h3>'."\n";
+
+                    echo '<ul class="c-center c-socials">'."\n";
+                        if($rsface!=NULL){
+                            echo '<a href="'.$rsface.'" target="blank">
+                            <i class="icon-social-facebook"></i>
+                            </a>'."\n";
+                        }
+                        if($rstwit!=NULL){
+                            echo '<a href="'.$rstwit.'" target="blank">
+                            <i class="icon-social-twitter"></i>
+                            </a>'."\n";
+                        }
+                        if($rsinsta!=NULL){
+                            echo '<a href="'.$rsinsta.'" target="blank">
+                            <i class="fab fa-instagram"></i>
+                            </a>'."\n";
+                        }
+                        if($rslinked!=NULL){
+                            echo '<a href="'.$rslinked.'" target="blank">
+                            <i class="fab fa-linkedin"></i>
+                            </a>'."\n";
+                        }
+                    echo '</ul>'."\n";
+                    echo ' </div>'."\n";
+                echo ' </div>'."\n";
+
+                echo ' <div class="c-center col-md-6 c-bg-white c-content-media-1">'."\n";
+                if($web!=NULL){
+                    echo '<a title="Web '.$nombre.'" href="'.$web.'"><img src="./assets/base/img/volunfair/ong2/'.$logo.'" width=30%/></a>'."\n";
+                }
+                echo ' </div>'."\n";
+            echo ' </div>'."\n";
+            echo ' </div>'."\n";
+            ?>
+
         
-        <!--</body>-->
-        </div>
+            <!-- End:Web y RS -->
+
+        <!-- END PAGE CONTENT -->                
+
         <!-- END: PAGE CONTAINER -->
 <?php
 
