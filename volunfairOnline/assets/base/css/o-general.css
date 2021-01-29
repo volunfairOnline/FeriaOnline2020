@@ -1,3 +1,13 @@
+body {
+    overflow-x: hidden;
+}
+
+/* Iconos centrados */
+.c-icons-center {
+    display: flex;
+    justify-content: center;
+}
+
 .bg-secondary {
     background-color: lightgray;
 }
@@ -6,3 +16,19 @@
     color: #6c757d;
     border-color: #6c757d;
 }
+
+/* Para Google Maps */
+.map-container{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+
+    .map-container iframe{
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+    }
