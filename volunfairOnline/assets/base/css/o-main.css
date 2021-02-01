@@ -1,10 +1,14 @@
 /********************************************
 ESTILOS PARA PÁGINA PRINCIPAL CON VÍDEO
 ********************************************/
+body {
+  overflow: hidden;
+}
+
 header {
   position: relative;
   background-color: white;
-  height: 75vh;
+  height: 100vh;
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
@@ -87,5 +91,18 @@ header .overlay {
     .container {
         max-width: 1200px!important;
     }
+}
+
+// --- Que no salga el negro del menú en móviles
+.c-page-on-scroll .c-layout-header.c-layout-header-2 {
+  background: transparent;
+}
+.c-page-on-scroll .c-layout-header.c-layout-header-2 {
+  background: transparent;
+}
+@media (max-width: 991px) {
+  .c-layout-header .c-layout-header-dark-mobile.c-header-transparent-dark {
+      background: transparent;
+  }
 }
 // --- Fin estilos página principal

@@ -43,5 +43,5 @@ function initializeClock(id, endtime) {
 }
 
 // --- Cambiar esta línea para cambiar la cuenta atra´s
-var deadline = "February 12 2020 10:00:0 GMT+0100"; 
+var deadline = "February 10 2021 10:00:0 GMT+0100"; 
 initializeClock("countdown", deadline);;

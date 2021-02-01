@@ -174,19 +174,18 @@ function escribe_cabecera ($es_index = 0) {
 								echo '<img src="assets/base/img/volunfair/logocompleto_sinfondo.png" alt="Volunfair" class="c-desktop-logo">'."\n";
 								echo '<img src="assets/base/img/volunfair/logocompleto_sinfondo.png" alt="Volunfair" class="c-desktop-logo-inverse">'."\n";
 								echo '<img src="assets/base/img/volunfair/logocompleto_sinfondo.png" alt="Volunfair" class="c-mobile-logo"> </a>'."\n";
-							echo '<button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">'."\n";
-								echo '<span class="c-line"></span>'."\n";
-								echo '<span class="c-line"></span>'."\n";
-								echo '<span class="c-line"></span>'."\n";
-							echo '</button>'."\n";
-							echo '<button class="c-topbar-toggler" type="button">'."\n";
-								echo '<i class="fa fa-ellipsis-v"></i>'."\n";
-							echo '</button>'."\n";
 
-							/*if($es_index){
-								/*solo aparece en el index*/
-								/*echo '</div>'."\n";
-							}*/
+							if(!$es_index){
+								/*solo aparece fuera del index*/
+								echo '<button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">'."\n";
+								echo '<span class="c-line"></span>'."\n";
+								echo '<span class="c-line"></span>'."\n";
+								echo '<span class="c-line"></span>'."\n";
+								echo '</button>'."\n";
+								echo '<button class="c-topbar-toggler" type="button">'."\n";
+									echo '<i class="fa fa-ellipsis-v"></i>'."\n";
+								echo '</button>'."\n";
+							}
 		  
 							echo '</div>'."\n";
 							echo '<!-- END: BRAND -->'."\n";
