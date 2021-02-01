@@ -74,7 +74,7 @@ escribe_cabecera(1);
             
             <!-- BEGIN: Enlace Airmeet -->
             <div class="container">
-                <a href="https://www.airmeet.com/e/ba4d3930-5669-11eb-9735-6d6703844e50" target="blank" role="button" class="btn btn-light btn-lg btn-block">
+                <a href="https://www.airmeet.com/e/b5f3a1b0-64d0-11eb-b018-89afae04ce4f" target="blank" role="button" class="btn btn-light btn-lg btn-block">
                     <div class="c-font-25">Inscripción entidades</div>
                 </a>
             </div>
