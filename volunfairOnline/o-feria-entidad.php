@@ -2,34 +2,40 @@
 
 // --- Archivo con las funciones de configuración (cabeceras, pie, ...)
 include ('./scripts/o-config.php');
+/*
+session_start();
+// --- Iniciar la clase de conexión a la base de datos
+require_once('./mysql/MySQLHandler.class.php');     
+require_once("./mysql/misconexiones.php"); 
+
+// --- Abrir la base de datos con usuario visitante
+$sql = Abrir_base();
 
 //consulta de los paramétros para crear la pagina web de la ong
 
-//$id_recibido_ong = $_GET["id"];
-
-//$id_recibido_ong=$id_recibido[0];
+$id_recibido_ong = $_GET["id"];
 
 //cambiar los nombre en función de la base de datos
-    //$consulta_pagina= "SELECT nombre_ong, texto_ong, color_ong, logo_ong, imagen_ong, web_ong, rd_ong
-    //FROM `bbdd`
-    //WHERE id_ong =" . $id_recibido_ong .";";
+$consulta_pagina_texto= "SELECT nombre_ong, voluntariado_ong, color_ong, logo_ong, imagen_ong, web_ong, rd_ong
+FROM `laliamos`
+WHERE id_ong =" . $id_recibido_ong .";";
 
-    //$nombre=$consulta_pagina[0];
-    //$texto=$consulta_pagina[1];
-    //$color=$consulta_pagina[2];
-    //$logo=$consulta_pagina[3];
-    //$imagen=$consulta_pagina[4];
-    //$web=$consulta_pagina[5];
-    //$rsface=$consulta_pagina[6];
-    //$rstwit=$consulta_pagina[7];
-    //$rsinsta=$consulta_pagina[8];
-    //$rslinked=$consulta_pagina[9];
-    //$video=$consulta_pagina[10];
+$consulta_pagina = $sql->Select($consulta_pagina_texto);
+
+// --- Copiar la consulta en una matriz de filas
+$fila_pagina = $sql->matrizFilas($consulta_pagina);
+
+// --- Contar el numero de filas de la tabla y liberar la consulta
+$nfilas_pagina = $sql->getNFilas($consulta_pagina);
+mysqli_free_result($consulta_pagina);
+
+// --- Si no existe ninguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
+if ($nfilas_pagina == 0) {*/
     $nombre="Caritas";
     $texto="Hola";
     $color="#ffffff";
     $logo="caritas.jpg";
-    $imagen="en_construccion_astronautas.png";
+    $imagen="PiesPortada.png";
     $web="https://www.volunfair.com/";
     $rsface="https://www.facebook.com/VolunFair/";
     $rstwit="https://twitter.com/volunfair";
@@ -37,7 +43,21 @@ include ('./scripts/o-config.php');
     $rslinked="https://www.linkedin.com/company/volunfair/?originalSubdomain=es";
     $video="H_f5CpQbIV8";
 
-
+// --- Si existe, mostramos sus datos
+/*} else {
+    $nombre=$fila_pagina[0];
+    $texto=$fila_pagina[1];
+    $color=$fila_pagina[2];
+    $logo=$fila_pagina[3];
+    $imagen=$fila_pagina[4];
+    $web=$fila_pagina[5];
+    $rsface=$fila_pagina[6];
+    $rstwit=$fila_pagina[7];
+    $rsinsta=$fila_pagina[8];
+    $rslinked=$fila_pagina[9];
+    $video=$fila_pagina[10];
+}
+*/
 // --- Escribimos las cabeceras
 escribe_cabecera();
 
@@ -57,13 +77,15 @@ escribe_cabecera();
 
             <!-- Logo ong -->
                 <?php
-                    echo '<div class="row  align-items-center">'."\n";
-                        echo '	<div class="c-font-center col-md-2 c-content-media-1 ">'."\n";
-                        echo '  <a title="Web '.$nombre.'" href="'.$web.'" target="_blank"><img width=75% src ="./assets/base/img/volunfair/ong2/'.$logo.'" /></a>'."\n";
-                        echo '	</div>'."\n";
-                        echo '	<div class="col-md-10 c-font-bold c-font-center c-font-34 c-font-uppercase c-margin-b-30">'."\n"; //No me termina de convencer el color c-bg-white
-                            echo ' <h1 class="c-font-40 c-font-uppercase c-font-bold font-size: 50px">'.$nombre.'</h1>'."\n";
-                        echo '	</div>'."\n";
+                    echo '<div class="row">'."\n";
+                        echo '  <div class="align-items-center">'."\n";
+                            echo '	<div class="c-font-center col-md-3 c-content-media-1 ">'."\n";
+                            echo '  <a title="Web '.$nombre.'" href="'.$web.'" target="_blank"><img width=75% src ="./assets/base/img/volunfair/ong2/'.$logo.'" /></a>'."\n";
+                            echo '	</div>'."\n";
+                            echo '	<div class="col-md-9">'."\n"; //No me termina de convencer el color c-bg-white
+                                echo ' <h1 class="c-font-70 c-font-uppercase c-font-bold c-font-center">'.$nombre.'</h1>'."\n";
+                            echo '	</div>'."\n";
+                        echo'   </div>'."\n";
                     echo '	</div>'."\n";             
             echo '	</div>'."\n";
                 ?>
@@ -123,11 +145,10 @@ escribe_cabecera();
             <?php 
                 
                 if($video!=NULL){
-                    echo ' <div class="c-bg-white c-content-media-1">'."\n";
-                        echo ' <div class="row c-center wow animated fadeInUp">'."\n";
-                            echo ' <iframe width="784" height="441" src="https://www.youtube-nocookie.com/embed/'.$video.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'."\n";
-                        echo ' </div>'."\n";
-                        echo ' <br />   '."\n";     
+                    echo ' <div class="c-content-box c-size-md c-bg-white c-content-media-1">'."\n";
+                        echo ' <div class="container c-center embed-responsive embed-responsive-16by9 wow animated fadeInUp">'."\n";
+                            echo ' <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/'.$video.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'."\n";
+                        echo ' </div>'."\n";    
                     echo ' </div>'."\n";                   
                 }
             ?>
@@ -146,7 +167,7 @@ escribe_cabecera();
                         echo ' <div class="c-center"'."\n";
                             $hayredes=0;
                             if($web!=NULL && ($rsface!=NULL || $rstwit!=NULL || $rsinsta!=NULL || $rslinked!=NULL)){
-                                echo '<p><a href="'.$web.'" target="_blank">Visitar web de <strong>'.$nombre.'</strong></a> o las redes sociales </p>'."\n";
+                                echo '<p><a href="'.$web.'" target="_blank">Visitar web de <strong>'.$nombre.'</strong></a> o sus redes sociales </p>'."\n";
                                 $hayredes = 1;
                             } else if ($web==NULL){ //No hay web
                                 echo '<p>Visitar redes sociales de '.$nombre.' </p>'."\n";
@@ -159,22 +180,22 @@ escribe_cabecera();
                             if($hayredes==1){
                                 if($rsface!=NULL){
                                     echo '<a href="'.$rsface.'" target="blank">
-                                    <i class="icon-social-facebook"></i>
+                                    <i class="icon-social-facebook fa-2x"></i>
                                     </a>'."\n";
                                 }
                                 if($rstwit!=NULL){
                                     echo '<a href="'.$rstwit.'" target="blank">
-                                    <i class="icon-social-twitter"></i>
+                                    <i class="icon-social-twitter fa-2x"></i>
                                     </a>'."\n";
                                 }
                                 if($rsinsta!=NULL){
                                     echo '<a href="'.$rsinsta.'" target="blank">
-                                    <i class="fab fa-instagram"></i>
+                                    <i class="fab fa-instagram fa-2x"></i>
                                     </a>'."\n";
                                 }
                                 if($rslinked!=NULL){
                                     echo '<a href="'.$rslinked.'" target="blank">
-                                    <i class="fab fa-linkedin"></i>
+                                    <i class="fab fa-linkedin fa-2x"></i>
                                     </a>'."\n";
                                 }
                             }

@@ -12,7 +12,7 @@ function escribe_menu () {
 		["archivo" => "o-rifa",  			"nombre" => "Rifa VOLUNFAIR"],
 		["archivo" => "o-patrocinadores", 	"nombre" => "Patrocinadores"],
 		["archivo" => "index", 	  	  		"nombre" => "Web VOLUNFAIR"],
-		["archivo" => "", 	  				"nombre" => "Acceso stands"]
+		["archivo" => "https://www.airmeet.com/e/ba4d3930-5669-11eb-9735-6d6703844e50", 	  				"nombre" => "Acceso stands"]
 
 	];
 	
