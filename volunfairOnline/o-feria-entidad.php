@@ -32,7 +32,13 @@ mysqli_free_result($consulta_pagina);
 // --- Si no existe ninguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
 if ($nfilas_pagina == 0) {*/
     $nombre="Caritas";
-    $texto="Hola";
+    $texto="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lacus metus. In arcu nisi, elementum sed finibus sit amet, malesuada non turpis. Sed non dolor tellus. Quisque ante lorem, faucibus in tellus eget, accumsan aliquet orci. Duis tristique bibendum ante et pharetra. Aliquam velit risus, convallis quis turpis ut, elementum sagittis diam. Phasellus quam odio, malesuada ut pretium vitae, lacinia et diam. Maecenas quis hendrerit orci, id ultrices elit. Suspendisse laoreet consequat sollicitudin. Nam diam urna, accumsan eu fringilla sed, tempus non magna.
+
+    Sed laoreet iaculis mauris, vestibulum sodales sapien dapibus nec. Nulla ac accumsan purus, at fermentum magna. Fusce eu orci mattis urna maximus tristique. Phasellus eget elementum turpis. Etiam porta nisl at aliquam pretium. Duis neque nibh, fermentum sit amet aliquam eu, lacinia et quam. Nulla mauris orci, maximus at nulla at, finibus placerat elit. Morbi a finibus est, vitae molestie libero. Donec sit amet nulla maximus, lacinia odio nec, porta mi. Ut felis sem, pellentesque eu nibh in, dapibus semper eros. Fusce maximus ante gravida molestie feugiat. Fusce non felis nisl.
+    
+    Nullam eleifend tristique purus. Praesent porttitor pretium lectus, ac semper lacus varius vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer eu tincidunt nunc. Aliquam ut consequat metus, et convallis libero. Nunc commodo dignissim massa. Morbi eget blandit sapien, vitae mollis nisl. Fusce imperdiet, velit tempor ornare tincidunt, mi odio posuere magna, at vulputate risus diam id ante. Morbi vehicula tellus et auctor aliquet.
+    
+    Donec rutrum lectus vitae nisi vehicula, at semper massa tincidunt. Phasellus tincidunt, neque a commodo tempor, enim ipsum iaculis nulla, vel elementum velit nunc quis lorem. Nullam nec elit eget mi mollis ullamcorper sit amet a nisl. Donec semper tincidunt metus vel lobortis. Nulla dapibus condimentum aliquam. Suspendisse id turpis in felis hendrerit consectetur in in quam. Vestibulum ornare sed risus ut dictum. Ut lacinia a tellus eget vestibulum. Nulla et aliquet orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam a elit risus. Nullam vel tellus eu lectus dignissim feugiat. Quisque posuere, justo sagittis blandit venenatis, ligula ante porttitor quam, eget bibendum mauris orci eu erat.";
     $color="#ffffff";
     $logo="caritas.jpg";
     $imagen="PiesPortada.png";
