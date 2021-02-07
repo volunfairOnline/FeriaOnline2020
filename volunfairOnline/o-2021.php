@@ -29,17 +29,75 @@ escribe_cabecera(1);
             <!-- BEGIN: Enlaces a las distintas páginas -->
             <div class="container">
                 <!--- BEGIN: Tarjeta con contenido -->
-                <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
-                    <a href="./o-entidades">
-                        <img class="card-img-top" src="./assets/base/img/volunfair/online-logos/charity.svg" alt="Entidades">
-                    </a>
-                    <div class="card-body-vf">
-                        <h3><a href="./o-entidades">Entidades</a></h3>
-                        <p class="card-text">Conoce a las 60 ONGs presentes en la feria. ¡Inscríbete online a ellas!</p>
+                    <!--Acceso stands-->
+                    <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
+                        <a href=""> <!-- completar-->
+                            <img class="card-img-top" src="./assets/base/img/volunfair/online-logos/stands.svg" alt="FeriaOnline">
+                        </a>
+                        <div class="card-body-vf">
+                            <h3><a href=""><b>Stands</a></b></h3> <!-- completar-->
+                            <p class="card-text"><b>Contanta en vivo</b> con las ONG's y preguntales por aquellas inquietudes que tengas</p>
+                        </div>
                     </div>
-                </div>
+
+                    <!--Eventos-->
+                    <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
+                        <a href=""> <!-- completar-->
+                            <img class="card-img-top" src="./assets/base/img/volunfair/online-logos/eventos.svg" alt="Eventos">
+                        </a>
+                        <div class="card-body-vf">
+                            <h3><a href=""><b>Eventos</a></b></h3> <!-- completar-->
+                            <p class="card-text">Unete a las charla con <b>Toni Nadal</b> y <b>Pablo España</b></p>
+                        </div>
+                    </div>
+
+                    <!--Rifa-->
+                    <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
+                        <a href="./o-rifa">
+                            <img class="card-img-top" src="./assets/base/img/volunfair/online-logos/rifa.svg" alt="Rifa">
+                        </a>
+                        <div class="card-body-vf">
+                            <h3><a href="./o-rifa"><b>Rifa</b></a></h3>
+                            <p class="card-text"><b>Disfruta</b> de alguno de nuestros premios</p>
+                        </div>
+                    </div>
+
+                    <!--Entidades-->
+                    <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
+                        <a href="./o-entidades">
+                            <img class="card-img-top" src="./assets/base/img/volunfair/online-logos/ayuda.svg" alt="Entidades">
+                        </a>
+                        <div class="card-body-vf">
+                            <h3><a href="./o-entidades"><b>Entidades</b></a></h3>
+                            <p class="card-text">Conoce a las <b>ONGs</b> presentes en la feria. ¡<b>Inscríbete</b> online a ellas!</p>
+                        </div>
+                    </div>
+
+                    <!--Patrocinadores-->
+                    <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
+                        <a href="./o-patrocinadores">
+                            <img class="card-img-top" src="./assets/base/img/volunfair/online-logos/patrocinadores.svg" alt="Patrocinadores">
+                        </a>
+                        <div class="card-body-vf">
+                            <h3><a href="./o-patrocinadores"><b>Patrocinadores</a></b></h3>
+                            <p class="card-text">Conoce a las empresas que han ayudado a hacer realidad este sueño</p>
+                        </div>
+                    </div>
+
+                    <!--Web-->
+                    <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
+                        <a href="./index">
+                            <img class="card-img-top" src="./assets/base/img/volunfair/online-logos/web.svg" alt="Web VF">
+                        </a>
+                        <div class="card-body-vf">
+                            <h3><a href="./index"><b>Nuestra Web</a></b></h3>
+                            <p class="card-text">Visita nuestra web para encontrar toda la información y preguntarnos cualquier duda</p>
+                        </div>
+                    </div>
+                
                 <!--- END: Tarjeta con contenido -->
-                <!--- BEGIN: Tarjeta con contenido -->
+
+                <!--- BEGIN: Tarjeta con contenido 
                 <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
                     <a href="./o-entidades">
                         <img class="card-img-top" src="./assets/base/img/volunfair/online-logos/social-care.svg" alt="Entidades">
@@ -51,7 +109,8 @@ escribe_cabecera(1);
                         </details>
                     </div>
                 </div>
-                <!--- END: Tarjeta con contenido -->
+                 END: Tarjeta con contenido -->
+
             </div>
             <!-- END: Enlaces a las distintas páginas -->
         </div>
