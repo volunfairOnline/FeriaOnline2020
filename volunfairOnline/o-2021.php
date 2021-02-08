@@ -21,7 +21,7 @@ escribe_cabecera(1);
         <div class="d-flex h-100 text-center align-items-center">
         <div class="w-100 text-white opciones">
             <div class="opciones-header">
-                <h1 class="c-content-title-1">VOLUNFAIR 2021</h1>
+                <h1 class="c-content-title-1 c-font-30"><b>VOLUNFAIR 2021</b></h1>
                 <p>¡Bienvenido a la edición 2021 de la feria de voluntariado!</p>
             </div>
             <div class="c-line-center c-theme-bg"></div>
@@ -29,6 +29,8 @@ escribe_cabecera(1);
             <!-- BEGIN: Enlaces a las distintas páginas -->
             <div class="container">
                 <!--- BEGIN: Tarjeta con contenido -->
+                <div class="container row">
+                    <div class="col-md-3"></div>
                     <!--Acceso stands-->
                     <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
                         <a href=""> <!-- completar-->
@@ -50,6 +52,7 @@ escribe_cabecera(1);
                             <p class="card-text">Unete a las charla con <b>Toni Nadal</b> y <b>Pablo España</b></p>
                         </div>
                     </div>
+                </div>
 
                     <!--Rifa-->
                     <div class="card tarjeta-enlace text-center border-secondary mb-3 col-md-3">
