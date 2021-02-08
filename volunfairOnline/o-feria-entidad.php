@@ -2,7 +2,7 @@
 
 // --- Archivo con las funciones de configuración (cabeceras, pie, ...)
 include ('./scripts/o-config.php');
-/*
+
 session_start();
 // --- Iniciar la clase de conexión a la base de datos
 require_once('./mysql/MySQLHandler.class.php');     
@@ -16,8 +16,23 @@ $sql = Abrir_base();
 $id_recibido_ong = $_GET["id"];
 
 //cambiar los nombre en función de la base de datos
-$consulta_pagina_texto= "SELECT nombre_ong, voluntariado_ong, color_ong, logo_ong, imagen_ong, web_ong, rd_ong
-FROM `laliamos`
+$consulta_pagina_texto= "
+SELECT
+    nombre_ong as nombre,
+    descripcion_ong as descripcion,
+    voluntariado_ong as voluntariado,
+    color_ong as color,
+    logo_ong as logo,
+    fondo_ong as imagen,
+    web_ong as web,
+    email_ong as email,
+    facebook_ong as face,
+    twitter_ong as twit,
+    instagram_ong as insta,
+    linkedin_ong as linked,
+    video_ong as video,
+    direccion_ong as direcc
+FROM `ongs`
 WHERE id_ong =" . $id_recibido_ong .";";
 
 $consulta_pagina = $sql->Select($consulta_pagina_texto);
@@ -30,16 +45,16 @@ $nfilas_pagina = $sql->getNFilas($consulta_pagina);
 mysqli_free_result($consulta_pagina);
 
 // --- Si no existe ninguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
-if ($nfilas_pagina == 0) {*/
+if ($nfilas_pagina == 0) {
     $nombre="Caritas";
-    $texto="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lacus metus. In arcu nisi, elementum sed finibus sit amet, malesuada non turpis. Sed non dolor tellus. Quisque ante lorem, faucibus in tellus eget, accumsan aliquet orci. Duis tristique bibendum ante et pharetra. Aliquam velit risus, convallis quis turpis ut, elementum sagittis diam. Phasellus quam odio, malesuada ut pretium vitae, lacinia et diam. Maecenas quis hendrerit orci, id ultrices elit. Suspendisse laoreet consequat sollicitudin. Nam diam urna, accumsan eu fringilla sed, tempus non magna.
+    $voluntariado="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lacus metus. In arcu nisi, elementum sed finibus sit amet, malesuada non turpis. Sed non dolor tellus. Quisque ante lorem, faucibus in tellus eget, accumsan aliquet orci. Duis tristique bibendum ante et pharetra. Aliquam velit risus, convallis quis turpis ut, elementum sagittis diam. Phasellus quam odio, malesuada ut pretium vitae, lacinia et diam. Maecenas quis hendrerit orci, id ultrices elit. Suspendisse laoreet consequat sollicitudin. Nam diam urna, accumsan eu fringilla sed, tempus non magna.
 
     Sed laoreet iaculis mauris, vestibulum sodales sapien dapibus nec. Nulla ac accumsan purus, at fermentum magna. Fusce eu orci mattis urna maximus tristique. Phasellus eget elementum turpis. Etiam porta nisl at aliquam pretium. Duis neque nibh, fermentum sit amet aliquam eu, lacinia et quam. Nulla mauris orci, maximus at nulla at, finibus placerat elit. Morbi a finibus est, vitae molestie libero. Donec sit amet nulla maximus, lacinia odio nec, porta mi. Ut felis sem, pellentesque eu nibh in, dapibus semper eros. Fusce maximus ante gravida molestie feugiat. Fusce non felis nisl.
     
     Nullam eleifend tristique purus. Praesent porttitor pretium lectus, ac semper lacus varius vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer eu tincidunt nunc. Aliquam ut consequat metus, et convallis libero. Nunc commodo dignissim massa. Morbi eget blandit sapien, vitae mollis nisl. Fusce imperdiet, velit tempor ornare tincidunt, mi odio posuere magna, at vulputate risus diam id ante. Morbi vehicula tellus et auctor aliquet.
     
     Donec rutrum lectus vitae nisi vehicula, at semper massa tincidunt. Phasellus tincidunt, neque a commodo tempor, enim ipsum iaculis nulla, vel elementum velit nunc quis lorem. Nullam nec elit eget mi mollis ullamcorper sit amet a nisl. Donec semper tincidunt metus vel lobortis. Nulla dapibus condimentum aliquam. Suspendisse id turpis in felis hendrerit consectetur in in quam. Vestibulum ornare sed risus ut dictum. Ut lacinia a tellus eget vestibulum. Nulla et aliquet orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam a elit risus. Nullam vel tellus eu lectus dignissim feugiat. Quisque posuere, justo sagittis blandit venenatis, ligula ante porttitor quam, eget bibendum mauris orci eu erat.";
-    $color="#ffffff";
+    $color="#F01539";
     $logo="caritas.jpg";
     $imagen="PiesPortada.png";
     $web="https://www.volunfair.com/";
@@ -50,20 +65,21 @@ if ($nfilas_pagina == 0) {*/
     $video="H_f5CpQbIV8";
 
 // --- Si existe, mostramos sus datos
-/*} else {
-    $nombre=$fila_pagina[0];
-    $texto=$fila_pagina[1];
-    $color=$fila_pagina[2];
-    $logo=$fila_pagina[3];
-    $imagen=$fila_pagina[4];
-    $web=$fila_pagina[5];
-    $rsface=$fila_pagina[6];
-    $rstwit=$fila_pagina[7];
-    $rsinsta=$fila_pagina[8];
-    $rslinked=$fila_pagina[9];
-    $video=$fila_pagina[10];
+} else {
+    $nombre=$fila_pagina[0]['nombre'];
+    $descripcion=$fila_pagina[0]['voluntariado'];
+    $voluntariado=$fila_pagina[0]['voluntariado'];
+    $color=$fila_pagina[0]['color'] ?? '#515151';           // --- Si no hay color en la base de datos, se asigna #515151 por defecto
+    $logo='logo_'.$fila_pagina[0]['logo'].'.jpg';
+    $imagen=$fila_pagina[0]['imagen'];
+    $web=$fila_pagina[0]['web'];
+    $rsface=$fila_pagina[0]['face'];
+    $rstwit=$fila_pagina[0]['twit'];
+    $rsinsta=$fila_pagina[0]['insta'];
+    $rslinked=$fila_pagina[0]['linked'];
+    $video=$fila_pagina[0]['video'];
 }
-*/
+
 // --- Escribimos las cabeceras
 escribe_cabecera();
 
@@ -71,11 +87,11 @@ escribe_cabecera();
         
     <!-- BEGIN: PAGE CONTAINER -->
         <?php
-            echo '<div class="c-layout-page" style="background-color:'.$color.'">'."\n";
+            echo '<div class="c-layout-page" style="background-color:#FFFFFF">'."\n";
         ?>
         
         <!-- BEGIN: LAYOUT/BREADCRUMBS/BREADCRUMBS-3 -->
-			<div class="c-layout-breadcrumbs-1 c-bgimage c-subtitle c-fonts-uppercase c-fonts-bold c-bg-img-center" style="background:#F01539;">
+			<div class="c-layout-breadcrumbs-1 c-bgimage c-subtitle c-fonts-uppercase c-fonts-bold c-bg-img-center" style="background:<?php echo $color; ?>">
             </div>
         <!-- END: LAYOUT/BREADCRUMBS/BREADCRUMBS-3 -->
 
@@ -112,7 +128,7 @@ escribe_cabecera();
                                         echo ' </div>'."\n";
                                                 
                                         echo ' <p>'."\n";
-                                            echo ''.$texto.' '."\n";
+                                            echo ''.$voluntariado.' '."\n";
                                         echo ' </p>'."\n";
                 
                                     echo ' </div>'."\n";
@@ -134,7 +150,7 @@ escribe_cabecera();
                                         echo ' </div>'."\n";
                                                 
                                         echo ' <p>'."\n";
-                                            echo ''.$texto.' '."\n";
+                                            echo ''.$voluntariado.' '."\n";
                                         echo ' </p>'."\n";
                 
                                     echo ' </div>'."\n";
