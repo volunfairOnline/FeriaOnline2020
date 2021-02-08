@@ -32,3 +32,10 @@ body {
         width:100%;
         position:absolute;
     }
+
+    
+/* Que las col-md- de una misma row se alineen verticalmente. Se aplica AL ROW */
+.align-items-center {
+	display: flex;
+    align-items: center;
+}
