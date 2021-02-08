@@ -25,6 +25,7 @@ escribe_cabecera(1);
             color: #FFFFFF 
         }
     </style>
+    
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center">
         <div class="w-100 text-white opciones">
