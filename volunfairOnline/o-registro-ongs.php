@@ -264,14 +264,14 @@ function initMap() {
 		$instagram_ong =$_POST["instagram_ong"];
 		$linkedin_ong =$_POST["linkedin_ong"];
 		$video_ong =$_POST["video_ong"];		
-				
+	
 	$insertarongs = "INSERT INTO ongs (nombre_ong, descripcion_ong, voluntariado_ong, email_ong, web_ong, facebook_ong, twitter_ong, instagram_ong, linkedin_ong, video_ong) VALUES('$nombre_ong', '$descripcion_ong', '$voluntariado_ong', '$email_ong', '$web_ong', '$facebook_ong', '$twitter_ong', '$instagram_ong', '$linkedin_ong', '$video_ong')";
-    $ejecutarInsertar = $sql->query($insertarongs);
+	
+	$ejecutarInsertar = $sql->query($insertarongs);
 	$id_insertado = mysqli_insert_id($sql->CONNECTION);
 	
 	if(!empty($_POST['nombreImagen']))
 	{
-		echo $_POST['id_img'].'oaksdjf';
 		$nombreImagen = $_POST['nombreImagen'];		
 		if(!empty($_POST['id_img']))
 		{			
@@ -317,7 +317,6 @@ function initMap() {
 		$sql->query($insertarongs2);
 	}	
 	
-	print_r($_POST['lugar']);
 	foreach($_POST['lugar'] as $id_voluntariado)
 	{
 		$insertarongs3 = "INSERT INTO voluntariado_lugar (id_ong, id_voluntariado) VALUES ('$id_insertado', '$id_voluntariado')";
