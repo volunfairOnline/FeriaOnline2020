@@ -41,6 +41,9 @@ Flush privileges;
 GRANT SELECT, INSERT, UPDATE, DELETE ON LaLiamos.ongs TO PequeLiante;
 GRANT SELECT, INSERT, UPDATE, DELETE ON LaLiamos.voluntariado_proyecto TO PequeLiante;
 GRANT SELECT, INSERT, UPDATE, DELETE ON LaLiamos.voluntariado_lugar TO PequeLiante;
+GRANT SELECT, INSERT, UPDATE, DELETE ON LaLiamos.imagen TO PequeLiante;
+GRANT SELECT, INSERT, UPDATE, DELETE ON LaLiamos.rifa TO PequeLiante;
+GRANT SELECT, INSERT, UPDATE, DELETE ON LaLiamos.sorteorifa TO PequeLiante;
 
 # -----------------------------------
 
