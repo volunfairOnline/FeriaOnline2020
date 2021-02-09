@@ -127,6 +127,7 @@
 	</div>
 </div>
 
+
 <?php
 	// --- Escribimos el pie de página (el archivo de configuración ya está incluido)
 	escribe_pie();

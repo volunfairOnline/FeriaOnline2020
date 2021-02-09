@@ -25,13 +25,17 @@
 		$consultaBusquedaPais = $consultaBusqueda[0];
 		$consultaBusquedaTipo = $consultaBusqueda[1];
 
-		// --- Variable con el texto de la consulta
-		$consulta_ong_texto = "SELECT DISTINCT nombre_ong, descripcion_ong, voluntariado_ong, email_ong,logo_ong
-		FROM `ongs` , `voluntariado`
-		WHERE ". $consultaBusquedaPais . "" . $consultaBusquedaTipo .
-		" AND ong_voluntariado = id_ong;";
+		if (empty($consultaBusquedaPais) && empty($consultaBusquedaTipo)) {
+			$escribe_and = '';
+		} else {
+			$escribe_and = 'AND';
+		}
 
-		echo $consulta_ong_texto;
+		// --- Variable con el texto de la consulta
+		$consulta_ong_texto = "SELECT DISTINCT ongs.id_ong, nombre_ong, descripcion_ong, voluntariado_ong, email_ong,logo_ong, facebook_ong, twitter_ong, instagram_ong, linkedin_ong
+		FROM `ongs` , `voluntariado_lugar`, `voluntariado_proyecto`
+		WHERE ". $consultaBusquedaPais . "" . $consultaBusquedaTipo
+		. $escribe_and." voluntariado_lugar.id_ong = ongs.id_ong AND voluntariado_proyecto.id_ong = ongs.id_ong;";
 
 		$consulta_ong = $sql->Select($consulta_ong_texto);
 
@@ -56,14 +60,39 @@
 			for ($i = 0; $i < $nfilas_ong; $i++) {
 				echo '<div class="row">'."\n";
 				echo '	<div class="col-md-12 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
-				echo '		<img src = "./assets/base/img/volunfair/ong2/'.$fila_ong[$i]['logo_ong'].'"width="80" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" />'."\n";
+				echo '		<img src = "./assets/base/img/volunfair/ong2/logo_'.$fila_ong[$i]['logo_ong'].'.jpg"width="80" title="'.htmlspecialchars(stripslashes($fila_ong[$i]['nombre_ong'])).'" />'."\n";
 				echo '		<p> <b>ONG</b>: '.$fila_ong[$i]['nombre_ong']."\n";
 				echo '		<br>'."\n";
-				echo '		<b>Descripci&oacute;n</b>: '.htmlspecialchars(stripslashes($fila_ong[$i]['descripcion_ong']))."\n";
-				echo '		<br>'."\n";
+				//echo '		<b>Descripci&oacute;n</b>: '.htmlspecialchars(stripslashes($fila_ong[$i]['descripcion_ong']))."\n";
+				//echo '		<br>'."\n";
 				echo '		<b>Voluntariado</b>: '.htmlspecialchars(stripslashes($fila_ong[$i]['voluntariado_ong']))."\n";
 				echo '		<br>'."\n";
-				echo '		<b>Puedes contactar</b> a trav&eacute;s de '.htmlspecialchars(stripslashes($fila_ong[$i]['rs_ong']))."\n";
+				echo '		<b>Puedes contactar</b> a trav&eacute;s de :'."\n";
+							// --- Redes sociales
+							$rsface = $fila_ong[$i]['facebook_ong'];
+							$rstwit = $fila_ong[$i]['twitter_ong'];
+							$rsinsta = $fila_ong[$i]['instagram_ong'];
+							$rslinked = $fila_ong[$i]['linkedin_ong'];
+							if($rsface!=NULL){
+								echo '<a href="'.$rsface.'" target="blank">
+								<i class="icon-social-facebook"></i>
+								</a>'."\n";
+							}
+							if($rstwit!=NULL){
+								echo '<a href="'.$rstwit.'" target="blank">
+								<i class="icon-social-twitter"></i>
+								</a>'."\n";
+							}
+							if($rsinsta!=NULL){
+								echo '<a href="'.$rsinsta.'" target="blank">
+								<i class="fab fa-instagram"></i>
+								</a>'."\n";
+							}
+							if($rslinked!=NULL){
+								echo '<a href="'.$rslinked.'" target="blank">
+								<i class="fab fa-linkedin"></i>
+								</a>'."\n";
+							}
 				echo '		</p>'."\n";
 				echo '	</div>'."\n";
 				echo '</div>'."\n";

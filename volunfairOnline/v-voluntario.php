@@ -60,7 +60,7 @@ escribe_cabecera();
                                         
                                         // --- Mostrar por pantalla el listado de posibles destinos
                                         if($result === false){
-                                            throw new Exception('Error en la consulta.');
+                                            //throw new Exception('Error en la consulta.');
                                         } else {
                                             while($row = mysqli_fetch_array($result)) {
                                                 echo ('<label><input type="checkbox" value="'.htmlspecialchars(stripslashes($row['id_voluntariado'])).'" name="lugar" id="lugar" />'.htmlspecialchars(stripslashes($row['pais_lugar'])).'</label><br />');
@@ -124,7 +124,7 @@ escribe_cabecera();
                 });
                 // --- Le damos formato de consulta MySQL (si no está vacío)
                 if (lugar.length > 0)
-                    lugar = " (lugar_voluntariado = " + lugar.join(" OR lugar_voluntariado = ") + ")";
+                    lugar = " (id_voluntariado = " + lugar.join(" OR id_voluntariado = ") + ")";
 
                 /* Cogemos los datos de tipo de voluntariado del formulario */
                 var tipo = [];
@@ -133,7 +133,7 @@ escribe_cabecera();
                 });
                 // --- Le damos formato de consulta MySQL (si no está vacío)
                 if (tipo.length > 0) {
-                    tipo = "(tipo_voluntariado = " + tipo.join(" OR tipo_voluntariado = ") + ")";
+                    tipo = "(id_proyecto = " + tipo.join(" OR id_proyecto = ") + ")";
                     // --- Si se ha seleccionado lugar, hay que preceder la condición de tipo por un AND para que funcione la consulta MySQL
                     if (lugar.length > 0)
                         tipo = 'AND ' + tipo;

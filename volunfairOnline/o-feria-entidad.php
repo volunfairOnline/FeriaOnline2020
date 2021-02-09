@@ -80,6 +80,22 @@ if ($nfilas_pagina == 0) {
     $video=$fila_pagina[0]['video'];
 }
 
+// --- Chapuza para las imágenes: se coge una aleatoria de esta matriz
+$matrizImagenes = [
+    'carpetaanteriores/flechazo.jpg',
+    'carpetaanteriores/juntos.jpg',
+    'carpetaanteriores/casacada.jpg',
+    'carpetaanteriores/ballet.jpg',
+    'carpetaanteriores/puente.jpg',
+    'bosque.jpg',
+    '09-40-54-seis-pares-zapatillas-viejas-desgastadas-superficie-madera-lila_116441-1606 (2).jpg',
+    '09-42-54-antiguos-entrenadores-deportivos_266732-13215 (2).jpg',
+    '09-49-59-zapatillas-grises-mesa-madera-negra_44073-97.jpg',
+    'Zapas2.jpg'
+];
+print_r($matrizImagenes);
+$imagen = 'Fotos2021/'.$matrizImagenes[random_int(0, sizeof($matrizImagenes))];
+
 // --- Escribimos las cabeceras
 escribe_cabecera();
 
@@ -116,7 +132,7 @@ escribe_cabecera();
             <!-- Imagen y descripción -->
                 <?php
                 if ($imagen!=NULL){
-                    echo ' <div class="parallax-window" data-parallax="scroll" data-bleed="100" data-speed="0.2" data-image-src="./assets/base/img/volunfair/web/'.$imagen.'">'."\n";
+                    echo ' <div class="parallax-window" data-parallax="scroll" data-bleed="100" data-speed="0.2" data-image-src="./assets/base/img/volunfair/'.$imagen.'">'."\n";
                     echo '<div class="c-content-box c-size-md ">'."\n";
                         echo ' <div class="container">'."\n";
                             echo ' <div class="row">'."\n";
