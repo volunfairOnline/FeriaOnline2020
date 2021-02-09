@@ -165,11 +165,11 @@ escribe_cabecera();
 
             <!-- Video -->
             <?php 
-                
+
                 if($video!=NULL){
                     echo ' <div class="c-content-box c-size-md c-bg-white c-content-media-1">'."\n";
                         echo ' <div class="container c-center embed-responsive embed-responsive-16by9 wow animated fadeInUp">'."\n";
-                            echo ' <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/'.substr($video,-1,11).'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'."\n";
+                            echo ' <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/'.substr($video,-11).'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'."\n";
                         echo ' </div>'."\n";    
                     echo ' </div>'."\n";                   
                 }
