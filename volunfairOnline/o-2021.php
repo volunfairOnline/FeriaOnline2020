@@ -17,12 +17,21 @@ escribe_cabecera(1);
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="videoprinc">
         <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
     </video>
+    <style>
+        div h1 b {
+            color: #FFFFFF;
+        }
+        div div h2 {
+            color: #FFFFFF 
+        }
+    </style>
+    
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center">
         <div class="w-100 text-white opciones">
             <div class="opciones-header">
                 <h1 class="c-content-title-1 c-font-30"><b>VOLUNFAIR 2021</b></h1>
-                <p>¡Bienvenido a la edición 2021 de la feria de voluntariado!</p>
+                <h2>¡Bienvenido a la edición 2021 de la feria de voluntariado!</h2>
             </div>
             <div class="c-line-center c-theme-bg"></div>
 
