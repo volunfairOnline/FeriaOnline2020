@@ -2,14 +2,13 @@
 ESTILOS PARA PÁGINA PRINCIPAL CON VÍDEO
 ********************************************/
 body {
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 header {
   position: relative;
-  background-color: white;
-  height: 100vh;
-  min-height: 25rem;
+  background-color: white; 
+  height: 4.8rem;
   width: 100%;
   overflow: hidden;
 }
@@ -62,7 +61,6 @@ header .overlay {
 
     .opciones opciones-header {
         font-size: 4rem;
-        padding-bottom: 1rem;
     }
 
     .opciones p {
@@ -76,7 +74,7 @@ header .overlay {
 
 .card-body-vf {
     padding: 0;
-    font-size: 0.8rem;
+    font-size: 0.8rem;	
 }
 
 .tarjeta-enlace {
