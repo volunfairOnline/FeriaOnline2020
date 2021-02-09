@@ -3,8 +3,11 @@
   perspective: 1000px;
   padding: 10px;
   position: relative;
-  margin: auto;
+  margin-right: 10%;
   width: 200px;
+}
+.visibility2{
+  display: none;
 }
 .card {
   position: relative;
@@ -12,8 +15,7 @@
   height: 300px;
   transition: 0.6s;
   transform-style: preserve-3d;
-  transform-origin: 100% 150px;
-  
+  transform-origin: 100% 150px;  
 }
 .card:hover, .card.flip{
   transform: rotateX(180deg);
@@ -63,3 +65,67 @@
 	color: #157771;
 	font-size: 24px;
 }
+@media (min-width: 577px) and (max-width: 992px) {
+  .visibility1 {
+    display: none;
+  }
+  .visibility2{
+    display: inline-flex;
+  }
+  .card {
+    width: 200px !important;
+  }
+  #flip-container{
+    margin-right: 4%;
+  }
+  .textTitle{
+    text-align: center;
+  }
+}
+@media (min-width: 380px) and (max-width: 576px) {
+  .visibility1 {
+    display: none;
+  }
+  .visibility2{
+    display: inline-flex;
+  }
+  .card {
+    width: 160px !important;
+  }
+  #flip-container{
+    margin-right: 3%;
+  }
+  .color-text{
+    font-size: 18px;
+  }
+  .card-body-vf{
+    padding-right: 0 !important;
+  }
+  .textTitle{
+    text-align: center;
+  }
+}
+@media (max-width: 379px) {
+  .visibility1 {
+    display: none;
+  }
+  .visibility2{
+    display: inline-flex;
+  }
+  .card {
+    width: 120px !important;
+  }
+  #flip-container{
+    margin-right: 2%;
+  }
+  .color-text{
+    font-size: 14px;
+  }
+  .card-body-vf{
+    padding-right: 0 !important;
+  }
+  .textTitle{
+    text-align: center;
+  }
+}
+
