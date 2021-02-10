@@ -13,7 +13,7 @@ header {
   overflow: hidden;
 }
 
-header video {
+video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -104,3 +104,23 @@ header .overlay {
   }
 }
 // --- Fin estilos página principal
+
+// --- Nuevos estilos
+.contenidos { 
+  background:  rgba(211, 211, 211, 0.432);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgb(200,200,200)  ;
+  font-size: 2rem;
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255)  ;
+  width: 80%;
+}
+
+.videoprinc {
+  position:fixed;
+  z-index: -1;
+  width:100%;     
+  height: auto;
+}

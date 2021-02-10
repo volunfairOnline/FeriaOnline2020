@@ -8,11 +8,11 @@ function escribe_menu () {
 	$menu = [
 		["archivo" => "o-2021", 	  		"nombre" => "Inicio"],
 		["archivo" => "o-entidades", 		"nombre" => "Entidades"],
-		["archivo" => "", 		  			"nombre" => "Eventos"],
-		["archivo" => "o-rifa",  			"nombre" => "Rifa VOLUNFAIR"],
+		["archivo" => "o-viene", 		  	"nombre" => "Eventos"],
+		["archivo" => "o-rifa",  			"nombre" => "Rifa"],
 		["archivo" => "o-patrocinadores", 	"nombre" => "Patrocinadores"],
-		["archivo" => "index", 	  	  		"nombre" => "Web VOLUNFAIR"],
-		["archivo" => "https://www.airmeet.com/e/b5f3a1b0-64d0-11eb-b018-89afae04ce4f", 	  				"nombre" => "Acceso stands"]
+		["archivo" => "index", 	  	  		"nombre" => "Web"],
+		["archivo" => "https://www.airmeet.com/e/b5f3a1b0-64d0-11eb-b018-89afae04ce4f", 	  	"nombre" => "Stands"]
 
 	];
 	

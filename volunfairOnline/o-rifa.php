@@ -1,24 +1,14 @@
-<?php
-	$servidor="localhost";
-	$usuario="root";
-	$clave="";
-	$baseDeongs="laliamos";
-
-	$enlace2 = mysqli_connect($servidor, $usuario, $clave, $baseDeongs);	
-	mysqli_set_charset($enlace2, 'utf8');
-	if(!$enlace2){
-		echo"Error en la conexion con el servidor";
-	}
-?>
 <?php 
     // --- Archivo con las funciones de configuración (cabeceras, pie, ...)
     include ('./scripts/o-config.php');
     session_start();
     // --- Iniciar la clase de conexión a la base de datos
     require_once('./mysql/MySQLHandler.class.php');     
-    require_once("./mysql/misconexiones.php"); 
+    require_once("./mysql/misconexiones.php");
+    // --- Abrir la base de datos con usuario visitante
+	$sql = Abrir_base();
     // --- Escribimos las cabeceras
-    escribe_cabecera(1);
+    escribe_cabecera();
 ?>
 
     <!-- BEGIN: PAGE CONTAINER -->
@@ -47,13 +37,13 @@
                             <div class="animated c-bordered c-center c-content-media-1 flash row wow rifaTab">
                                 <form id="laliamos" name="laliamos" method="POST" class="form-register" enctype="multipart/form-data">	
                                     <h2 class="titleRifa">Mirar mi número de la rifa:</h2><br>
-                                    <label>Introduce su teléfono: <input type="tel" name="telefono" placeholder="Número de teléfono"></label>
+                                    <label>Introduce tu teléfono: <input type="tel" name="telefono" placeholder="Número de teléfono"></label>
                                     <input type="submit" name="recuperar" value="recuperar" class="buttonRifa"><br><br>
                                 </form> 
                                 <?php
                                     if(isset($_POST['recuperar'])){
                                         $telefono =$_POST["telefono"];		
-                                        $result =  mysqli_query($enlace2, "SELECT  num_rifa FROM sorteorifa WHERE movil_rifa='$telefono'");
+                                        $result =  $sql->CONNECTION->query("SELECT  num_rifa FROM sorteorifa WHERE movil_rifa='$telefono'");
                                         while ($row = $result->fetch_assoc()) {
                                             echo "El número de teléfono: <strong>".$telefono."</strong> tiene asignado el número de la rifa: <strong>".$row['num_rifa']."</strong><br>";
                                         }	
@@ -69,7 +59,8 @@
                     </div>
                 </div>
             </div>
-        </div>             
+        </div> 
+        <br /><br />            
         <div class="c-container">
             <div class="row">
                 <div class="col-md-12">
@@ -91,7 +82,7 @@
                             // --- Abrir la base de datos con usuario visitante
                             $sql = Abrir_base();
                             // cambiado por *
-                            $result = $sql->Select(" SELECT `id_rifa`, `articulo_rifa`,`descripcion_rifa`, `foto_rifa` FROM `rifa`");
+                            $result = $sql->Select(" SELECT `id_rifa`, `articulo_rifa`,`descripcion_rifa`, `foto_rifa`, `empresa_rifa` FROM `rifa` ORDER BY `foto_rifa` DESC");
 
                             // --- Mostrar por pantalla el listado de posibles destinos
                             if($result === false){
@@ -100,11 +91,12 @@
                             else {
                                 echo '<div class="row">'."\n";
                                 while($row = mysqli_fetch_array($result)) {
-                                    echo '	<div class="col-md-4 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
-                                    echo '		<img width=100% src = "./assets/base/img/volunfair/rifa/'.$row['foto_rifa'].'" />'."\n";
-                                    echo '		<p> <b>'.$row['articulo_rifa'].'</b>';
-                                    echo '		<br>'."\n";
-                                    echo '		<b>Descripci&oacute;n</b>: '.htmlspecialchars(stripslashes($row['descripcion_rifa']))."\n";
+                                    echo '	<div class="col-md-3 c-content-media-1 c-bordered wow fadeIn animated">'."\n";
+                                    // --- Solo ponemos imagen si no está vacía
+                                    if($row['foto_rifa']) {echo '		<img width=100% src = "./assets/base/img/volunfair/rifa/'.$row['foto_rifa'].'" />'."\n";}
+                                    echo '		<p> <b>'.$row['articulo_rifa'].'</b> de '.$row['empresa_rifa'];
+                                    //echo '		<br>'."\n";
+                                    //echo '		<b>Descripci&oacute;n</b>: '.htmlspecialchars(stripslashes($row['descripcion_rifa']))."\n";
                                     echo '		</p>'."\n";
                                     echo '	</div>'."\n";
                                 }

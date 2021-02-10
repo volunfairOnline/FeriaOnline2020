@@ -37,6 +37,7 @@
 		WHERE ". $consultaBusquedaPais . "" . $consultaBusquedaTipo
 		. $escribe_and." voluntariado_lugar.id_ong = ongs.id_ong AND voluntariado_proyecto.id_ong = ongs.id_ong;";
 
+		echo $consulta_ong_texto;
 		$consulta_ong = $sql->Select($consulta_ong_texto);
 
 		// --- Copiar la consulta en una matriz de filas

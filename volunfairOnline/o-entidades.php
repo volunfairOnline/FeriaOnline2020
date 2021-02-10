@@ -139,7 +139,7 @@ escribe_cabecera();
                 });
                 // --- Le damos formato de consulta MySQL (si no está vacío)
                 if (lugar.length > 0)
-                    lugar = " (id_proyecto = " + lugar.join(" OR id_proyecto = ") + ")";
+                    lugar = " (id_voluntariado = " + lugar.join(" OR id_voluntariado = ") + ")";
 
                 /* Cogemos los datos de tipo de voluntariado del formulario */
                 var tipo = [];
@@ -148,7 +148,7 @@ escribe_cabecera();
                 });
                 // --- Le damos formato de consulta MySQL (si no está vacío)
                 if (tipo.length > 0) {
-                    tipo = "(id_voluntariado = " + tipo.join(" OR id_voluntariado = ") + ")";
+                    tipo = "(id_proyecto = " + tipo.join(" OR id_proyecto = ") + ")";
                     // --- Si se ha seleccionado lugar, hay que preceder la condición de tipo por un AND para que funcione la consulta MySQL
                     if (lugar.length > 0)
                         tipo = 'AND ' + tipo;

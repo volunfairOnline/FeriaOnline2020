@@ -65,7 +65,7 @@
 				echo '		<br>'."\n";
 				//echo '		<b>Descripci&oacute;n</b>: '.htmlspecialchars(stripslashes($fila_ong[$i]['descripcion_ong']))."\n";
 				//echo '		<br>'."\n";
-				echo '		<b>Voluntariado</b>: '.htmlspecialchars(stripslashes($fila_ong[$i]['voluntariado_ong']))."\n";
+				echo '		<b>Voluntariado</b>: '.$fila_ong[$i]['voluntariado_ong']."\n";
 				echo '		<br>'."\n";
 				echo '		<b>Puedes contactar</b> a trav&eacute;s de :'."\n";
 							// --- Redes sociales
